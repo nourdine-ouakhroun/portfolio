@@ -6,7 +6,7 @@ function Hello() {
 			<div className="info">
 				<p>Hello, World! I am</p>
 				<p id="name">Nourdine Ouakhroun</p>
-				<p id="specialty"> > Full Stack Developer</p>
+				<p id="specialty"> {'>'} Full Stack Developer</p>
 			</div>
 			<p id="github">
 				<span id="comment">
