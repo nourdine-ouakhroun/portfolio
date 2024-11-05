@@ -14,7 +14,7 @@ function Menu({isOpen, onLinkClick}){
                     <span>_projects</span>
                 </Link>
             </ul>
-            <Link className={styles.routerlink + " md:w-[13rem]"} to='/contact-me' onClick={onLinkClick}>
+            <Link className={styles.routerlink + " md:w-[13rem] md:border-r-[0] md:border-l-[1px] border-l-custom-gray"} to='/contact-me' onClick={onLinkClick}>
                 <span>_contact-me</span>
             </Link>
         </nav>
