@@ -1,22 +1,32 @@
 import styles from './menu.module.css'
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from 'react';
+
+function CustomLink({text, style='', path, onLinkClick}){
+    const {pathname} = useLocation()
+    const activeButton = pathname === path;
+    return(
+        <Link className={styles.routerlink + style} to={path}
+            onClick={onLinkClick}>
+            <p className={activeButton ? "text-white" : "text-steel-blue"}>{text}</p>
+            <div className={activeButton ? "md:h-[5px] md:w-[100%] bg-sunset-orange absolute bottom-0 " + styles.appear : ''}></div>
+        </Link>
+    )
+}
+
 function Menu({isOpen, onLinkClick}){
     return(
         <nav className="flex-col md:flex-row " style={{display: isOpen ? 'none' : 'flex'}}>
             <ul className='flex flex-col md:flex-row'>
-                <Link className={styles.routerlink} to='/' onClick={onLinkClick}>
-                    <span>_home</span>
-                </Link>
-                <Link className={styles.routerlink} to='/about-me' onClick={onLinkClick}>
-                    <span>_about-me</span>
-                </Link>
-                <Link className={styles.routerlink} to='/projects' onClick={onLinkClick}>
-                    <span>_projects</span>
-                </Link>
+                <CustomLink onLinkClick={onLinkClick} text='_home' path="/"/>
+                <CustomLink onLinkClick={onLinkClick} text='_about-me' path="/about-me"/>
+                <CustomLink onLinkClick={onLinkClick} text='_projects' path="/projects"/>
             </ul>
-            <Link className={styles.routerlink + " md:w-[13rem] md:border-r-[0] md:border-l-[1px] border-l-custom-gray"} to='/contact-me' onClick={onLinkClick}>
-                <span>_contact-me</span>
-            </Link>
+            <CustomLink
+                onLinkClick={onLinkClick}
+                text='_contact-me'
+                style={" md:w-[13rem] md:border-r-[0] md:border-l-[1px] border-l-custom-gray"}
+                path='/contact-me'/>
         </nav>
     )
 }

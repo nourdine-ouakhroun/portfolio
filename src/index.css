@@ -35,8 +35,16 @@ body {
   	place-items: center;
 	justify-content: center;
   	background-color: #010C15;
+	z-index: 1;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+	display: none; /* For Chrome, Safari, and Opera */
 }
 
+.scrollbar-hidden {
+	-ms-overflow-style: none; /* For Internet Explorer and Edge */
+	scrollbar-width: none; /* For Firefox */
+}
 h1 {
   	font-size: 3.2em;
   	line-height: 1.1;

@@ -8,16 +8,17 @@ const user = {
 }
 
 function HeaderBar(){
-	const [isOpen, setisOpen] = useState(true)
+	const [show, setshow] = useState(true)
 	function clicked(){
-		setisOpen(!isOpen)
+		if (window.innerWidth < 768)
+			setshow(!show)
 	}
 
-	function handleResize(){
+	function handleResize() {
 		if (window.innerWidth >= 768)
-			setisOpen(false)
+			setshow(false)
 		else
-			setisOpen(true)
+			setshow(true)
 	}
 
 	useEffect(() => {
@@ -28,7 +29,7 @@ function HeaderBar(){
 		return () => {
 		  window.removeEventListener('resize', handleResize);
 		};
-	  }, []);
+	}, []);
 
 	return(
 		<>
@@ -37,13 +38,13 @@ function HeaderBar(){
 					<p className={styles.p}>{user.name}</p>
 					<img
 						className='md:hidden'
-						src= {isOpen ? 'src/assets/list.svg' : 'src/assets/close_list.svg'}
+						src= {show ? 'src/assets/list.svg' : 'src/assets/close_list.svg'}
 						onClick={() => clicked()} alt='menu'
 						style={{cursor: 'pointer'}}
 						/>
 				</div>
 			</header>
-			<Menu isOpen={isOpen} onLinkClick={() => setisOpen(true)} />
+			<Menu isOpen={show} onLinkClick={() => clicked()} />
 		</>
 	)
 }

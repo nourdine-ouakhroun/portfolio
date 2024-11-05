@@ -18,9 +18,8 @@ ul {
 
 
 
-.routerlink span {
+.routerlink p {
     margin-left: 1em;
-    color: white;
 }
 
 .routerlink {
@@ -41,6 +40,9 @@ ul {
     display: flex;
     align-items: center;
     cursor: pointer;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
 }
 
 @media (min-width : 768px){
@@ -50,11 +52,35 @@ ul {
     }
     .routerlink {
         border-bottom: none;
-        justify-content: center;
-        width: 9rem;
+        width: 8rem;
         border-right: 1px solid #1E2D3D;
     }
-    .routerlink span{
+    .routerlink p{
         margin: 0;
     }
 }
+
+@keyframes disparition {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}
+
+
+@keyframes appear {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+.appear {
+    animation: appear 0.5s forwards;
+}
+
