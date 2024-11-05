@@ -8,6 +8,15 @@
 	grid-template : "header" 50px "main" 1fr "foter" 50px;
 	overflow-x: hidden;
 }
+@media (min-width: 768px){
+	.app{
+		grid-template : 
+		"header extra" 65px 
+		"main main" 1fr
+		"foter fouter" 50px;
+		grid-template-columns: 1fr 5fr;
+	}
+}
 .logo {
 	height: 6em;
 	padding: 1.5em;

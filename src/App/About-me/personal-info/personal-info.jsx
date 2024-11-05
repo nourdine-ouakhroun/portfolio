@@ -6,7 +6,7 @@ function PersonalInfoCategory({text, icon}) {
 
     const clickhandler = () =>{
         setShow(!show)
-    }
+    }   
     return(
         <div className={costumStyle.container} onClick={clickhandler}>
             <img className={`mr-3 ${show ? 'rotate-90' : ''}`} src="src/assets/arow.svg" alt="" />
