@@ -7,14 +7,23 @@ export default {
     extend: {
       colors: {
         'steel-blue': '#607B96',
-        'custom-gray': '#1E2D3D',
-        'purple': '#4338ca',
-      },
-      backgroundColor: {
         'custom-blue': '#011627', // Replace 'green' with the actual color
         'custom-gray': '#1E2D3D',
-        'sunset-orange': '#FEA55F'
+        'purple': '#4338ca',
+        'light-gray': '#607B96',
+        'light-green': '#43D9AD',
+        'dark-green': '#175553',
+        'sunset-orange': '#FEA55F',
       },
+      rotate: {
+        '270': '270deg',
+      }
+      // backgroundColor: {
+      //   'custom-blue': '#011627', // Replace 'green' with the actual color
+      //   'custom-gray': '#1E2D3D',
+      //   'sunset-orange': '#FEA55F',
+      //   'dark-gray': '#175553',
+      // },
       // animation: {
       //   disparition: 'disparition 1s forwards',
       // },
