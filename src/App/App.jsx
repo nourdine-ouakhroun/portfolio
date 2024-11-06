@@ -18,8 +18,9 @@ function App() {
 					{/* <Route path='/projects' e	lement={<Main component={<Projects />} />} />
 					<Route path='/contact-me' element={<Main component={<ContactMe />} />} /> */}
 				</Routes>
-				<div className='absolute w-[65%] h-full right-0 z-2'>
-					<img className="w-full h-full" src="src/assets/Background Blurs.svg" alt="" />
+				<div className='absolute w-full h-full 2xl:left-[23rem] z-2'>
+					<img className="hidden md:flex w-full h-full" src="src/assets/Background Blurs.svg" alt="" />
+					<img className="md:hidden w-full h-full" src="src/assets/Mobile Background Blurs.svg" alt="" />
 				</div>
 			</div>
 		</Router>
