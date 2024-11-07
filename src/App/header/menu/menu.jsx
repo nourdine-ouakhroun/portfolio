@@ -8,7 +8,7 @@ function CustomLink({text, style='', path, onLinkClick}){
     return(
         <Link className={styles.routerlink + style} to={path}
             onClick={onLinkClick}>
-            <p className={activeButton ? "text-white" : "text-steel-blue"}>{text}</p>
+            <p className={`text-2xl  ${activeButton ? "text-white" : "text-light-gray"}`}>{text}</p>
             <div className={activeButton ? "md:h-[5px] md:w-[100%] bg-sunset-orange absolute bottom-0 " + styles.appear : ''}></div>
         </Link>
     )
@@ -25,7 +25,7 @@ function Menu({isOpen, onLinkClick}){
             <CustomLink
                 onLinkClick={onLinkClick}
                 text='_contact-me'
-                style={" md:w-[13rem] md:border-r-[0] md:border-l-[1px] border-l-custom-gray"}
+                style={" md:w-[15rem] md:border-r-[0] md:border-l-[1px] border-l-custom-gray"}
                 path='/contact-me'/>
         </nav>
     )

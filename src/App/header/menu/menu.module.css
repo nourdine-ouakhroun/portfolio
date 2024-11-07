@@ -24,17 +24,7 @@ ul {
 
 .routerlink {
     width: 100%;
-    height: 4em;
-    border-bottom: 1px solid #1E2D3D;
-    color: white;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.routerlink {
-    width: 100%;
-    height: 4em;
+    height: 80p5;
     border-bottom: 1px solid #1E2D3D;
     color: white;
     display: flex;
@@ -52,7 +42,7 @@ ul {
     }
     .routerlink {
         border-bottom: none;
-        width: 8rem;
+        width: 12rem;
         border-right: 1px solid #1E2D3D;
     }
     .routerlink p{

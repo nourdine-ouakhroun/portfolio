@@ -10,17 +10,17 @@ const KeyBoard = ()=>{
 				</div>
 				<div className='h-full w-full flex items-center flex-col justify-between'>
 					<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
-						<img className="rotate-270" src="src/assets/playIcon.svg" alt=""/>
+						<img className="rotate-270" src="/src/assets/playIcon.svg" alt=""/>
 					</div>
 					<div className='flex gap-2'>
 						<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
-							<img className="rotate-180" src="src/assets/playIcon.svg" alt=""/>
+							<img className="rotate-180" src="/src/assets/playIcon.svg" alt=""/>
 						</div>
 						<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
-							<img className="rotate-90" src="src/assets/playIcon.svg" alt=""/>
+							<img className="rotate-90" src="/src/assets/playIcon.svg" alt=""/>
 						</div>
 						<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
-							<img src="src/assets/playIcon.svg" alt=""/>
+							<img src="/src/assets/playIcon.svg" alt=""/>
 						</div>
 					</div>
 				</div>
@@ -91,23 +91,23 @@ const GameContainer = () => {
 
 function Hello() {
 	return (
-		<div className=' w-full h-full flex justify-center items-center gap-28 relative'>
+		<div className='w-[90%] h-full flex justify-center items-center gap-28 relative'>
 			<div className='flex flex-1 justify-center 2xl:justify-end items-center 2xl:items-end'>
 				<div className='flex flex-col gap-20'>
 					<div className="flex flex-col gap-3">
-						<p>Hello, World! I am</p>
-						<p className='text-4xl md:text-5xl lg:text-7xl' >Nourdine Ouakhroun</p>
-						<p className='text-2xl md:text-3xl lg:text-5xl text-light-green 2xl:text-purple'> {'>'} Full Stack Developer</p>
+						<p className='md:text-2xl'>Hello, World! I am</p>
+						<p className='text-6xl md:text-8xl lg:text-7xl' >Nourdine Ouakhroun</p>
+						<p className='text-1xl md:text-3xl lg:text-5xl text-light-green 2xl:text-purple'> {'>'} Full Stack Developer</p>
 					</div>
 					<p className='gap-3 flex flex-col'>
-						<span className='text-light-gray'>
+						<span className='md:text-2xl text-light-gray'>
 							// find my profile on GitHub:
 						</span>
 						<span>
-							<span className='text-purple'>const </span>
-							<span className='text-light-green'>github</span>
-							<span> = </span>
-							<a href="https://github.com/nourdine-ouakhroun" target="_blank" rel="noreferrer">
+							<span className='md:text-2xl text-purple'>const </span>
+							<span className='md:text-2xl text-light-green'>github</span>
+							<span className='md:text-2xl'> = </span>
+							<a className='md:text-2xl text-dark-orange' href="https://github.com/nourdine-ouakhroun" target="_blank" rel="noreferrer">
 								<span>
 									"https://github.com/nourdine-ouakhroun" 
 								</span>
