@@ -2,8 +2,7 @@ import React, {useState} from 'react';
 import './category.css';
 import costumStyle from '../utils/utils.jsx';
 function Category({name, component}){
-    // console.log(component)
-    const [show, setShow] = useState(false)
+    const [show, setShow] = useState(true)
     
     const clickHandler = () => {
         setShow(!show)

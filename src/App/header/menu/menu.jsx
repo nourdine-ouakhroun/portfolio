@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 function CustomLink({text, style='', path, onLinkClick}){
     const {pathname} = useLocation()
-    const activeButton = pathname === path;
+    const activeButton = path !== '/' ? pathname.startsWith(path) : pathname === path;
     return(
         <Link className={styles.routerlink + style} to={path}
             onClick={onLinkClick}>
