@@ -12,7 +12,7 @@ const KeyBoard = ()=>{
 					<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
 						<img className="rotate-270" src="/src/assets/playIcon.svg" alt=""/>
 					</div>
-					<div className='flex gap-2'>
+					<div className='flex gap-4'>
 						<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
 							<img className="rotate-180" src="/src/assets/playIcon.svg" alt=""/>
 						</div>
