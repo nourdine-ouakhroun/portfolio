@@ -21,19 +21,34 @@ const lines = [
     " */ "
 ]
 
-function Writer({Lines}){
 
+function Writer({Lines, length}){
     return(<>
-        <div className='w-[90%] h-[90%]'>
-            {
-               Lines.map((line, index)=>{
-                    return (
-                        <p key={index} className='text-light-gray text-2xl' style={{ whiteSpace: 'pre' }}>
-                            {`${index + 1}   ${line}`}
+        <div className='w-[90%] h-[95%] flex'>
+            <div className="w-[5rem]">
+                {/* print just numbers */}
+                {
+                    Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
+                        return (
+                            <p key={index} className='text-light-gray text-2xl'>
+                            {number}
                         </p>
                     )
-               })
-            }
+                    })
+                }
+            </div>
+            <div>
+                {
+                    Lines.map((line, index)=>{
+                        return (
+                            <p key={index} className='text-light-gray text-2xl' style={{ whiteSpace: 'pre' }}>
+                                {`${line}`}
+                            </p>
+                        )
+                    })
+                }
+            </div>
+
         </div>
     </>)
 }
@@ -70,7 +85,7 @@ const BioComponent = [
     {
         img : '/src/assets/Readmi.svg',
         text: 'about-me.md',
-        component: <Writer Lines={lines}/>
+        component: <Writer Lines={lines} length={lines.length}/>
     },
     {
         img : '/src/assets/img.svg',
@@ -101,7 +116,7 @@ function Bio() {
             handleClick({
                 img: '/src/assets/Readmi.svg',
                 text: 'about-me.md',
-                component: <Writer Lines={lines}/>
+                component: <Writer Lines={lines} length={lines.length}/>
             });
             handleClick({
                 img: '/src/assets/img.svg',
