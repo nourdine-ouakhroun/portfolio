@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Bio from './bio/bio.jsx'
 import { useSelector } from 'react-redux'
 import { Link, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import Education from './education/education.jsx'
 
 function Content({text, component, img}){
     return(
@@ -56,19 +57,17 @@ export function PersonalInfoContent() {
 
 function PersonalInfoCategory({text, icon, component}) {
     const [show, setShow] = useState(false)
-    const location = useLocation()
-    const isMatching = location.pathname.includes(text)
     const clickhandler = () =>{
         setShow(!show)
     }
     return(
         <div className='flex flex-col w-[85%]'>
             <Link to={text} className={costumStyle.container + ' h-[40px]'} onClick={clickhandler}>
-                <img className={`w-[11px] mr-4 ${show || isMatching ? 'rotate-90' : ''}`} src="/src/assets/arow.svg" alt="" />
+                <img className={`w-[11px] mr-4 ${show  ? 'rotate-90' : ''}`} src="/src/assets/arow.svg" alt="" />
                 <img className="w-[23px] mr-3" src={icon} alt="" />
                 <span className={`text-2xl ${show ? "text-white" : "text-steel-blue"}`}>{text}</span>
             </Link>
-            <div className={!show && !isMatching ? 'hidden' : 'flex flex justify-end items-center'} >{component}</div>
+            <div className={!show ? 'hidden' : 'flex flex justify-end items-center'} >{component}</div>
         </div>
     )
 }
@@ -78,8 +77,8 @@ export function PersonalInfo(){
     return(
         <div className="md:border-b-[1px] border-b-custom-gray w-full  flex justify-start items-center flex-col gap-2 mb-2">
             <PersonalInfoCategory text="bio" icon="/src/assets/o-folder.svg" component={<Bio/>}/>
-            <PersonalInfoCategory text="interests" icon="/src/assets/g-folder.svg"/>
-            <PersonalInfoCategory text="education" icon="/src/assets/m-folder.svg"/>
+            <PersonalInfoCategory text="education" icon="/src/assets/g-folder.svg" component={<Education/>}/>
+            {/* <PersonalInfoCategory text="interests" icon="/src/assets/g-folder.svg"/> */}
         </div>
     )
 }

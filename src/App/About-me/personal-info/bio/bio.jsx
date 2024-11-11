@@ -18,11 +18,6 @@ const lines = [
     " * a strong foundation in both front-end and ",
     " * back-end technologies, allowing me to create",
     " * impactful applications.",
-    " * ",
-    " * I'm also an avid competitive programmer, having",
-    " * competed in events like MNPC and CodinGame, where",
-    " * I secured 92nd place globally and 13th place in ",
-    " * Morocco during my first competition.",
     " */ "
 ]
 
