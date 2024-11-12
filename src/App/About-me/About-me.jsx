@@ -33,8 +33,15 @@ function AboutMe(){
             <div className='flex w-full h-full md:border-r-[1px] border-r-custom-gray'>
                 <div className='w-[5rem] h-full md:border-r-[1px] border-r-custom-gray'>
                     <CustomLink img="/src/assets/personal-icon.svg" path='personal-info'/>
-                    <CustomLink img="/src/assets/professional-icon.svg" path='professional-info'/>
-                    {/* <CustomLink img="/src/assets/hobbies-icon.svg" path='hobbies'/> */}
+                    {/* <CustomLink img="/src/assets/personal-icon.svg" path='personal-info'/> */}
+                    {/* <CustomLink img="/src/assets/professional-icon.svg" path='professional-info'/>
+                    <CustomLink img="/src/assets/hobbies-icon.svg" path='hobbies'/> */}
+                    <div className='h-[5rem] flex justify-center items-center'>
+                        <img className={`w-[50%]  opacity-40 `} src={'/src/assets/professional-icon.svg'} alt="" />
+                    </div>
+                    <div className='h-[5rem] flex justify-center items-center'>
+                        <img className={`w-[50%]  opacity-40 `} src={'/src/assets/hobbies-icon.svg'} alt="" />
+                    </div>
                 </div>
                 <div className='w-full h-full md:border-r-[1px] border-r-custom-gray'>
                     <div className={costumStyle.container + ' h-[4rem] md:hidden'}>
@@ -43,7 +50,7 @@ function AboutMe(){
                     <Routes>
                         <Route path='personal-info/*' element={<Category name="personal-info" component={<PersonalInfo/>}/>}/>
                         <Route path='professional-info/*' element={<Category name="professional-info" component={<></>}/>}/>
-                        {/* <Route path='hobbies/*' element={<Category name="hobbies" component={<></>}/>}/> */}
+                        <Route path='hobbies/*' element={<Category name="hobbies" component={<></>}/>}/>
                     </Routes>
                     <Category name="contacts" component={<Contacts/>}/>
                 </div>
@@ -52,7 +59,7 @@ function AboutMe(){
                 <Routes>
                     <Route path='personal-info/*' element={<PersonalInfoContent/>}/>
                     <Route path='professional-info/*' element={<></>}/>
-                    {/* <Route path='hobbies/*' element={<></>}/> */}
+                    <Route path='hobbies/*' element={<></>}/>
                 </Routes>
             </div>
         </div>
