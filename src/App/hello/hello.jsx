@@ -10,17 +10,17 @@ const KeyBoard = ()=>{
 				</div>
 				<div className='h-full w-full flex items-center flex-col justify-between'>
 					<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
-						<img className="rotate-270" src="src/assets/playIcon.svg" alt=""/>
+						<img className="rotate-270" src="/assets/playIcon.svg" alt=""/>
 					</div>
 					<div className='flex gap-4'>
 						<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
-							<img className="rotate-180" src="src/assets/playIcon.svg" alt=""/>
+							<img className="rotate-180" src="/assets/playIcon.svg" alt=""/>
 						</div>
 						<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
-							<img className="rotate-90" src="src/assets/playIcon.svg" alt=""/>
+							<img className="rotate-90" src="/assets/playIcon.svg" alt=""/>
 						</div>
 						<div className='border-[2px] border-custom-gray w-[70px] h-[40px] bg-black rounded-lg flex justify-center items-center'>
-							<img src="src/assets/playIcon.svg" alt=""/>
+							<img src="/assets/playIcon.svg" alt=""/>
 						</div>
 					</div>
 				</div>

@@ -58,14 +58,14 @@ function Writer({Lines, length}){
 function MyImg(){
 
     return(<>
-        {/* <img className="absolute" src="src/assets/Background Blurs.svg" alt="" /> */}
+        {/* <img className="absolute" src="/assets/Background Blurs.svg" alt="" /> */}
         <div className='w-[90%] h-[90%] relative flex justify-center items-start drop-shadow-[80px_30px_10px_rgba(0,0,0,1)]'>
             <img 
                 className="
                 w-[80%]
                 opacity-80
                 " 
-                src="src/assets/nouakhro-none_background.jpeg" 
+                src="/assets/nouakhro-none_background.jpeg" 
                 alt="Profile Image"
             />
         </div>
@@ -75,7 +75,7 @@ function MyImg(){
                 w-[100%]
                 opacity-80
                 " 
-                src="src/assets/nouakhro.jpeg" 
+                src="/assets/nouakhro.jpeg" 
                 alt="Profile Image"
             />
         </div> */}
@@ -122,7 +122,7 @@ function Education() {
     return (
         <div className="w-[85%] flex flex-col">
             <div className="flex justify-start items-center">
-            <img src="src/assets/Readmi.svg" alt="" />
+            <img src="/assets/Readmi.svg" alt="" />
             <span className="text-2xl text-light-gray">education.md</span>
             </div>
         </div>

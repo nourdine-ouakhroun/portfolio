@@ -10,8 +10,8 @@ function Component({img, text}){
 function Contacts(){
     return(
         <div className="w-full h-[7rem] flex flex-col justify-center items-center">
-            <Component img="src/assets/mail-icon.svg" text="nourdineoukhroun@gmail.com"/>
-            <Component img="src/assets/phone-icon.svg" text="+212620704142"/>
+            <Component img="/assets/mail-icon.svg" text="nourdineoukhroun@gmail.com"/>
+            <Component img="/assets/phone-icon.svg" text="+212620704142"/>
         </div>
     )
 }
