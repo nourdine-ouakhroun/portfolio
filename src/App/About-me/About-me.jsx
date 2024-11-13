@@ -32,10 +32,10 @@ function AboutMe(){
         <div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr]  justify-start items-center flex-col">
             <div className='flex w-full h-full md:border-r-[1px] border-r-custom-gray'>
                 <div className='w-[5rem] h-full md:border-r-[1px] border-r-custom-gray'>
-                    <CustomLink img="/src/assets/personal-icon.svg" path='personal-info'/>
-                    {/* <CustomLink img="/src/assets/personal-icon.svg" path='personal-info'/> */}
-                    {/* <CustomLink img="/src/assets/professional-icon.svg" path='professional-info'/>
-                    <CustomLink img="/src/assets/hobbies-icon.svg" path='hobbies'/> */}
+                    <CustomLink img="src/assets/personal-icon.svg" path='personal-info'/>
+                    {/* <CustomLink img="src/assets/personal-icon.svg" path='personal-info'/> */}
+                    {/* <CustomLink img="src/assets/professional-icon.svg" path='professional-info'/>
+                    <CustomLink img="src/assets/hobbies-icon.svg" path='hobbies'/> */}
                     <div className='h-[5rem] flex justify-center items-center'>
                         <img className={`w-[50%]  opacity-40 `} src={'/src/assets/professional-icon.svg'} alt="" />
                     </div>

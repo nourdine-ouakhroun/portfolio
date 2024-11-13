@@ -54,14 +54,14 @@ function ProjectsFliter()
 {
     return (
         <div className="w-[90%] mt-2">
-            <Languages text="React" icon="/src/assets/react.svg"/>
-            <Languages text="HTML" icon="/src/assets/html.svg"/>
-            <Languages text="Css" icon="/src/assets/CSS.svg"/>
-            <Languages text="C" icon="/src/assets/CSS.svg"/>
-            <Languages text="C++" icon="/src/assets/CSS.svg"/>
-            <Languages text="Django" icon="/src/assets/CSS.svg"/>
-            <Languages text="Python" icon="/src/assets/CSS.svg"/>
-            <Languages text="Docker" icon="/src/assets/CSS.svg"/>
+            <Languages text="React" icon="src/assets/react.svg"/>
+            <Languages text="HTML" icon="src/assets/html.svg"/>
+            <Languages text="Css" icon="src/assets/CSS.svg"/>
+            <Languages text="C" icon="src/assets/CSS.svg"/>
+            <Languages text="C++" icon="src/assets/CSS.svg"/>
+            <Languages text="Django" icon="src/assets/CSS.svg"/>
+            <Languages text="Python" icon="src/assets/CSS.svg"/>
+            <Languages text="Docker" icon="src/assets/CSS.svg"/>
         </div>
     )
 }

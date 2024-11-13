@@ -15,7 +15,7 @@ function Content({text, component, img}){
                     <div className='flex justify-between items-center w-[90%]'>
                         <img src={img} alt=""/>
                         <span className='text-2xl text-light-gray'>{text}</span>
-                        <img src="/src/assets/x.svg" alt=""/>
+                        <img src="src/assets/x.svg" alt=""/>
                     </div>
                 </div>
             </div>
@@ -53,8 +53,8 @@ export function PersonalInfoContent() {
   );
 }
 
-{/* <Content img="/src/assets/Readmi.svg" text='about-me.md' component={<Writer Lines={lines}/>}/>
-<Content img="/src/assets/img.svg" text='nouakhro.jpeg' component={<MyImg/>}/> */}
+{/* <Content img="src/assets/Readmi.svg" text='about-me.md' component={<Writer Lines={lines}/>}/>
+<Content img="src/assets/img.svg" text='nouakhro.jpeg' component={<MyImg/>}/> */}
 
 function PersonalInfoCategory({text, icon, component}) {
     const [show, setShow] = useState(false)
@@ -64,7 +64,7 @@ function PersonalInfoCategory({text, icon, component}) {
     return(
         <div className='flex flex-col w-[85%] mb-[7px]'>
             <Link to={text} className={costumStyle.container + ' h-[40px]'} onClick={clickhandler}>
-                <img className={`w-[11px] mr-4 ${show  ? 'rotate-90' : ''}`} src="/src/assets/arow.svg" alt="" />
+                <img className={`w-[11px] mr-4 ${show  ? 'rotate-90' : ''}`} src="src/assets/arow.svg" alt="" />
                 <img className="w-[23px] mr-3" src={icon} alt="" />
                 <span className={`text-2xl ${show ? "text-white" : "text-steel-blue"}`}>{text}</span>
             </Link>
@@ -87,7 +87,7 @@ const DownloadResume = () => {
       onClick={handleDownload}
     >
       <div className="flex justify-start items-center">
-        <img src="/src/assets/resum.svg" alt="Resume Icon" />
+        <img src="src/assets/resum.svg" alt="Resume Icon" />
         <span className="text-2xl text-light-gray">my_resume.pdf</span>
       </div>
     </div>
@@ -99,8 +99,8 @@ export function PersonalInfo(){
     
     return(
         <div className="md:border-b-[1px] border-b-custom-gray w-full  flex justify-start items-center flex-col gap-2 mb-2">
-            <PersonalInfoCategory text="bio" icon="/src/assets/o-folder.svg" component={<Bio/>}/>
-            <PersonalInfoCategory text="education" icon="/src/assets/m-folder.svg" component={<Education/>}/>
+            <PersonalInfoCategory text="bio" icon="src/assets/o-folder.svg" component={<Bio/>}/>
+            <PersonalInfoCategory text="education" icon="src/assets/m-folder.svg" component={<Education/>}/>
             <DownloadResume />
         </div>
     )
