@@ -7,6 +7,15 @@ import Hello from './hello/hello.jsx'
 import AboutMe from './About-me/About-me.jsx'
 import Projects from './projects/projects.jsx'
 // import ContactMe from './contact-me/contact-me.jsx'
+
+function ERROR_404() {
+	return (
+		<div className='w-full h-full flex justify-center items-center'>
+			<h1 className='text-4xl'>404 Not Found</h1>
+		</div>
+	);
+}
+
 function AppComponent() {
 	const location = useLocation();
 	const isHomePage = location.pathname === '/';
@@ -15,8 +24,9 @@ function AppComponent() {
 			<HeaderBar />
 			<Routes>
 				<Route path='/' element={<Main component={<Hello />} />} />
-				<Route path='/about-me/*' element={<Main component={<AboutMe />} />} />
+				<Route path='/about-me/*/' element={<Main component={<AboutMe />} />} />
 				<Route path='/projects' element={<Main component={<Projects />} />} />
+				<Route path='*' element={<ERROR_404 />} />
 				{/* <Route path='/contact-me' element={<Main component={<ContactMe />} />} /> */}
 			</Routes>
 			<Footer />
