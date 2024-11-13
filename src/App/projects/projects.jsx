@@ -1,6 +1,8 @@
 import Category from "../category/category"
 import { useState } from 'react';
 
+
+
 const Checkmark = () => {
   const [isChecked, setIsChecked] = useState(false);
 
@@ -10,30 +12,32 @@ const Checkmark = () => {
 
   return (
     <div
-      className="checkmark-container cursor-pointer flex justify-center items-center w-6 h-6 border border-steel-blue rounded"
+      className={`cursor-pointer flex justify-center items-center w-8 h-8 rounded-lg border-2 transition-all duration-200 ${
+        isChecked
+          ? 'bg-steel-blue border-steel-blue'
+          : 'bg-transparent border-steel-blue hover:bg-gray-800 hover:border-gray-400'
+      }`}
       onClick={handleClick}
     >
-      {isChecked ? (
+      {isChecked && (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
+          width="28"
+          height="28"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
+          stroke="#FFFFFF"
+          strokeWidth="3"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="text-steel-blue"
         >
-          <path d="M5 12l4 4L19 7" />
+          <path d="M5 12l5 5L19 7" />
         </svg>
-      ) : (
-        <div className="checkmark-placeholder w-full h-full bg-steel-blue"></div>
       )}
     </div>
   );
 };
+
 
 
 
@@ -55,13 +59,13 @@ function ProjectsFliter()
     return (
         <div className="w-[90%] mt-2">
             <Languages text="React" icon="src/assets/react.svg"/>
-            <Languages text="HTML" icon="src/assets/html.svg"/>
+            <Languages text="HTML" icon="src/assets/HTML.svg"/>
             <Languages text="Css" icon="src/assets/CSS.svg"/>
-            <Languages text="C" icon="src/assets/CSS.svg"/>
-            <Languages text="C++" icon="src/assets/CSS.svg"/>
-            <Languages text="Django" icon="src/assets/CSS.svg"/>
-            <Languages text="Python" icon="src/assets/CSS.svg"/>
-            <Languages text="Docker" icon="src/assets/CSS.svg"/>
+            <Languages text="C" icon="src/assets/C.svg"/>
+            <Languages text="C++" icon="src/assets/C++.svg"/>
+            <Languages text="Django" icon="src/assets/Django.svg"/>
+            <Languages text="Python" icon="src/assets/Python.svg"/>
+            <Languages text="Docker" icon="src/assets/Docker.svg"/>
         </div>
     )
 }
