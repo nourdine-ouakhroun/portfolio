@@ -5,7 +5,7 @@ import Footer from './footer/footer.jsx'
 import Main from './main/main.jsx'
 import Hello from './hello/hello.jsx'
 import AboutMe from './About-me/About-me.jsx'
-// import Projects from './projects/projects.jsx'
+import Projects from './projects/projects.jsx'
 // import ContactMe from './contact-me/contact-me.jsx'
 function AppComponent() {
 	const location = useLocation();
@@ -16,8 +16,8 @@ function AppComponent() {
 			<Routes>
 				<Route path='/' element={<Main component={<Hello />} />} />
 				<Route path='/about-me/*' element={<Main component={<AboutMe />} />} />
-				{/* <Route path='/projects' element={<Main component={<Projects />} />} />
-				<Route path='/contact-me' element={<Main component={<ContactMe />} />} /> */}
+				<Route path='/projects' element={<Main component={<Projects />} />} />
+				{/* <Route path='/contact-me' element={<Main component={<ContactMe />} />} /> */}
 			</Routes>
 			<Footer />
 		</div>
