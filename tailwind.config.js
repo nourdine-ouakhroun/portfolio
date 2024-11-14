@@ -14,7 +14,9 @@ export default {
         'light-green': '#43D9AD',
         'dark-green': '#175553',
         'sunset-orange': '#FEA55F',
-        'dark-orange': '#E99287'
+        'dark-orange': '#E99287',
+        'light-purple': '#5565E8',
+        'dark-blue': '#011221',
       },
       rotate: {
         '270': '270deg',
