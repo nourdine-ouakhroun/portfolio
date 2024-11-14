@@ -85,7 +85,7 @@ function MyImg(){
 
 // const BioComponent = [
 //     {
-//         img : '/src/assets/Readmi.svg',
+//         img : '/assets/Readmi.svg',
 //         text: 'education.md',
 //         component: <Writer Lines={lines}/>
 //     },
@@ -108,7 +108,7 @@ function Education() {
     useEffect(() => {
         if (locationPath) {
             handleClick({
-                img: '/src/assets/Readmi.svg',
+                img: '/assets/Readmi.svg',
                 text: 'education.md',
                 component: <Writer Lines={lines} length={lines.length}/>
             });

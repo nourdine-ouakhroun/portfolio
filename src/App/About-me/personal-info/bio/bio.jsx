@@ -83,12 +83,12 @@ function MyImg(){
 
 const BioComponent = [
     {
-        img : '/src/assets/Readmi.svg',
+        img : '/assets/Readmi.svg',
         text: 'about-me.md',
         component: <Writer Lines={lines} length={lines.length}/>
     },
     {
-        img : '/src/assets/img.svg',
+        img : '/assets/img.svg',
         text: 'nouakhro.jpeg',
         component: <MyImg/>
     }
@@ -114,12 +114,12 @@ function Bio() {
     useEffect(() => {
         if (locationPath) {
             handleClick({
-                img: '/src/assets/Readmi.svg',
+                img: '/assets/Readmi.svg',
                 text: 'about-me.md',
                 component: <Writer Lines={lines} length={lines.length}/>
             });
             handleClick({
-                img: '/src/assets/img.svg',
+                img: '/assets/img.svg',
                 text: 'nouakhro.jpeg',
                 component: <MyImg/>
             });
