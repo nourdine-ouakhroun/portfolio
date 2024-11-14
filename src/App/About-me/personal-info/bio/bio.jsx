@@ -114,7 +114,7 @@ function Bio() {
     useEffect(() => {
         if (locationPath) {
             handleClick({
-                img: '/assets/Readmi.svg',
+                img: '/assets/readmi.svg',
                 text: 'about-me.md',
                 component: <Writer Lines={lines} length={lines.length}/>
             });
