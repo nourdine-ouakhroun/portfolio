@@ -38,7 +38,7 @@ function HeaderBar(){
 					<p className='text-2xl text-light-gray'>{user.name}</p>
 					<img
 						className='md:hidden'
-						src= {show ? '/src/assets/list.svg' : '/src/assets/close_list.svg'}
+						src= {show ? '/assets/list.svg' : '/assets/close_list.svg'}
 						onClick={() => clicked()} alt='menu'
 						style={{cursor: 'pointer'}}
 						/>

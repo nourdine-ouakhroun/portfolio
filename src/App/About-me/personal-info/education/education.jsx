@@ -85,7 +85,7 @@ function MyImg(){
 
 // const BioComponent = [
 //     {
-//         img : '/assets/Readmi.svg',
+//         img : '/assets/readmi.svg',
 //         text: 'education.md',
 //         component: <Writer Lines={lines}/>
 //     },
@@ -122,7 +122,7 @@ function Education() {
     return (
         <div className="w-[85%] flex flex-col">
             <div className="flex justify-start items-center">
-            <img src="/assets/Readmi.svg" alt="" />
+            <img src="/assets/readmi.svg" alt="" />
             <span className="text-2xl text-light-gray">education.md</span>
             </div>
         </div>

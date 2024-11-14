@@ -28,12 +28,12 @@ function Resume() {
     useEffect(() => {
         if (locationPath) {
             // handleClick({
-            //     img: '/src/assets/Readmi.svg',
+            //     img: '/assets/Readmi.svg',
             //     text: 'about-me.md',
             //     component: <Writer Lines={lines}/>
             // });
             // handleClick({
-            //     img: '/src/assets/img.svg',
+            //     img: '/assets/img.svg',
             //     text: 'nouakhro.jpeg',
             //     component: <MyImg/>
             // });

@@ -11,7 +11,7 @@
 }
 
 .bg-home{
-	background-image: url('/src/assets/Mobile Background Blurs.svg');
+	background-image: url('/assets/Mobile Background Blurs.svg');
 }
 @media (min-width: 768px){
 	.app{
@@ -23,7 +23,7 @@
 		@apply bg-no-repeat bg-contain bg-right;
 	}
 	.bg-home{
-		background-image: url('/src/assets/Background Blurs.svg');
+		background-image: url('/assets/Background Blurs.svg');
 	}
 }
 

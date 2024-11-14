@@ -37,10 +37,10 @@ function AboutMe(){
                     {/* <CustomLink img="/assets/professional-icon.svg" path='professional-info'/>
                     <CustomLink img="/assets/hobbies-icon.svg" path='hobbies'/> */}
                     <div className='h-[5rem] flex justify-center items-center'>
-                        <img className={`w-[50%]  opacity-40 `} src={'/src/assets/professional-icon.svg'} alt="" />
+                        <img className={`w-[50%]  opacity-40 `} src={'/assets/professional-icon.svg'} alt="" />
                     </div>
                     <div className='h-[5rem] flex justify-center items-center'>
-                        <img className={`w-[50%]  opacity-40 `} src={'/src/assets/hobbies-icon.svg'} alt="" />
+                        <img className={`w-[50%]  opacity-40 `} src={'/assets/hobbies-icon.svg'} alt="" />
                     </div>
                 </div>
                 <div className='w-full h-full md:border-r-[1px] border-r-custom-gray'>
