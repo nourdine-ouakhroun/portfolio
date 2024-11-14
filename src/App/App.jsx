@@ -16,7 +16,7 @@ function AppComponent() {
 			<HeaderBar />
 			<Routes>
 				<Route path='/' element={<Main component={<Hello />} />} />
-				<Route path='/about-me/*/' element={<Main component={<AboutMe />} />} />
+				<Route path='/about-me/*' element={<Main component={<AboutMe />} />} />
 				<Route path='/projects' element={<Main component={<Projects />} />} />
 				{/* <Route path='/contact-me' element={<Main component={<ContactMe />} />} /> */}
 			</Routes>
