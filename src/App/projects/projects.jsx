@@ -125,10 +125,13 @@ function ProjectsList()
 {
     return(
 		// hide the scrollbar
-		<div className="w-[80%] h-[90%] flex justify-evenly items-center flex-wrap overflow-y-auto  scrollbar-none scrollbar-hide  no-scrollbar">
+		<div className=" overflow-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-[90%] h-[80%] flex justify-evenly items-start flex-wrap overflow-y-auto  scrollbar-none scrollbar-hide  no-scrollbar">
 			<ProjectsCard description={description.Transcendence} img={"/assets/tranc.svg"} text={"Transcendence"}/>
 			<ProjectsCard description={description.WebServer} img={"/assets/nginx.png"} text={"WebServer"}/>
 			{/* <ProjectsCard description={description.Inception} img={"/assets/Inception.png"} text={"Inception"}/> */}
+			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
+			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
+			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
 			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
 		</div>
     )
