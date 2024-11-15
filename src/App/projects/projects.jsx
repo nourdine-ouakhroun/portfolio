@@ -89,24 +89,47 @@ function ProjectsFliter()
     )
 }
 
-
+// transition duration-500 ease-in-out transform hover:scale-105 hover:border-light-gray 
 function ProjectsCard({description, img, text})
 {
 	return (
-		<div className="w-[30rem] h-[30rem] flex flex-col justify-start items-end">
-			<div className="w-full h-[5rem] flex justify-start items-center">
-				<span className="text-light-purple text-2xl">{text}</span>
+		<div className="w-full h-[12rem] flex flex justify-end items-end border border-custom-gray ">
+			<div className="w-full h-full flex justify-center items-start flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
+				<img className="w-[90%] h-full object-contain" src={img} alt="" />
 			</div>
-
-			<div className="transition duration-500 ease-in-out transform hover:scale-105 hover:border-light-gray w-full h-[25rem] felx flex-col rounded-xl border border-custom-gray flex justify-center items-center">
-				<div className="w-full h-full flex justify-center items-center flex-1 border-b-[1px] border-b-custom-gray rounded-t-xl overflow-hidden">
-					<img className="w-[90%] h-full object-contain" src={img} alt="" />
-				</div>
-				<div className="flex flex-col flex-1 w-full h-full bg-dark-blue justify-center items-center rounded-b-xl">
-					<div className="flex flex-col justify-between items-center w-[85%] h-[75%]">
-						<span className="text-light-gray text-2xl">{description}</span>
-						<div className="w-full h-[3rem] flex justify-start items-center">
-							<button className="w-[10rem] h-[3rem] bg-custom-gray rounded-lg">View-Project</button>
+			<div className="w-[85%] h-full felx flex-col flex justify-center items-center">
+				<div className="w-[95%] h-[80%] flex  justify-start  items-start gap-2">
+					<div className="w-full h-full flex flex-col justify-between items-end">
+						<div className="flex w-full justify-between items-center">
+							<span className="text-light-purple text-2xl">{text}</span>
+							<div className="flex gap-2">
+								<img src="/assets/react.svg" alt="" className="w-[30px] h-[30px]"/>
+								<img src="/assets/HTML.svg" alt="" className="w-[30px] h-[30px]"/>
+								<img src="/assets/CSS.svg" alt="" className="w-[30px] h-[30px]"/>
+							</div>
+						</div>
+						<div className="w-[99%] h-full flex justify-between items-end border-custom-gray">
+							<div className="flex w-full h-full flex justify-between items-start">
+								<div className="flex h-full flex-col justify-start items-start">
+								{
+									description.map((item, index) => {
+										return (
+											<div key={index} className="flex justify-start items-center gap-2">
+												<span className="text-light-gray text-3xl"> • </span>
+												<span className="text-light-gray text-xl"> {item} </span>
+											</div>
+										)
+									})
+								}
+								</div>
+								{/* links */}
+								{/* <div className="flex h-full justify-start items-end gap-2">
+									<img src="/assets/github.svg" alt="" className="w-[35px] h-[35px]"/>
+								</div> */}
+							</div>
+							<div className="h-[3rem] flex justify-start items-center">
+								<button className="w-[10rem] h-full bg-custom-gray rounded-lg">View-Project</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -115,22 +138,26 @@ function ProjectsCard({description, img, text})
 	)
 }
 
+
 const description = {
-	Inception: "Deployed WordPress, MariaDB, Nginx using Docker",
-	Transcendence: "A web application that allows users to create",
-	WebServer: "A web server that can handle multiple clients "
+	Inception: [
+		"Introduction to the world of virtualization.",
+	],
+	//give this with new line
+	Transcendence : [
+		"The ft_transcendence project challenges 42 students to build a scalable, full-stack web application.",
+	],
+	WebServer: [
+		"Introduction to the world of virtualization.",
+	]
 }
 
 function ProjectsList()
 {
     return(
-		// hide the scrollbar
-		<div className=" overflow-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-[90%] h-[80%] flex justify-evenly items-start flex-wrap overflow-y-auto  scrollbar-none scrollbar-hide  no-scrollbar">
-			<ProjectsCard description={description.Transcendence} img={"/assets/tranc.svg"} text={"Transcendence"}/>
+		<div className="[&::-webkit-scrollbar]:hidden w-[95%] h-[85%] flex flex-col items-start flex-wrap overflow-y-auto gap-5">
+			<ProjectsCard description={description.Transcendence} img={"/assets/tranc.svg"} text={"ft_transcendence"}/>
 			<ProjectsCard description={description.WebServer} img={"/assets/nginx.png"} text={"WebServer"}/>
-			{/* <ProjectsCard description={description.Inception} img={"/assets/Inception.png"} text={"Inception"}/> */}
-			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
-			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
 			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
 			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
 		</div>
