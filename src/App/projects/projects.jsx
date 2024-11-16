@@ -109,7 +109,7 @@ function ProjectsCard({description, img, text})
 							</div>
 						</div>
 						<div className="w-[99%] h-full flex justify-between items-end border-custom-gray">
-							<div className="flex w-full h-full flex justify-between items-start">
+							<div className="flex w-[90%] h-full flex justify-between items-start">
 								<div className="flex h-full flex-col justify-start items-start">
 								{
 									description.map((item, index) => {
@@ -122,10 +122,9 @@ function ProjectsCard({description, img, text})
 									})
 								}
 								</div>
-								{/* links */}
-								{/* <div className="flex h-full justify-start items-end gap-2">
+								<div className="w-[10%] flex h-full justify-start items-end gap-2">
 									<img src="/assets/github.svg" alt="" className="w-[35px] h-[35px]"/>
-								</div> */}
+								</div>
 							</div>
 							<div className="h-[3rem] flex justify-start items-center">
 								<button className="w-[10rem] h-full bg-custom-gray rounded-lg">View-Project</button>
