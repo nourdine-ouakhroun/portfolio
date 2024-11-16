@@ -109,7 +109,7 @@ function ProjectsCard({description, img, text})
 							</div>
 						</div>
 						<div className="w-[99%] h-full flex justify-between items-end border-custom-gray">
-							<div className="flex w-[90%] h-full flex justify-between items-start">
+							<div className="flex w-[90%] h-full flex flex-col justify-between items-start">
 								<div className="flex h-full flex-col justify-start items-start">
 								{
 									description.map((item, index) => {
@@ -122,13 +122,13 @@ function ProjectsCard({description, img, text})
 									})
 								}
 								</div>
-								<div className="w-[10%] flex h-full justify-start items-end gap-2">
-									<img src="/assets/github.svg" alt="" className="w-[35px] h-[35px]"/>
+								<div className="h-[3rem] flex justify-start items-center">
+									<button className="w-[10rem] h-full bg-custom-gray rounded-lg">View More</button>
 								</div>
 							</div>
-							<div className="h-[3rem] flex justify-start items-center">
-								<button className="w-[10rem] h-full bg-custom-gray rounded-lg">View-Project</button>
-							</div>
+							<a href="https://github/nourdine-ouakhroun/ft_transcendence" target="_blank" rel="noreferrer" className="w-[10%] flex h-full justify-end items-end gap-2">
+								<img src="/assets/github.svg" alt="" className="w-[35px] h-[35px]"/>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -138,16 +138,71 @@ function ProjectsCard({description, img, text})
 }
 
 
+/**
+ * function ProjectsCard({description, img, text})
+{
+	return (
+		<div className="w-full flex justify-end items-end border border-custom-gray">
+			<div className="flex h-full  justify-center items-center flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
+				<img className="w-[90%] object-contain" src={img} alt="" />
+			</div>
+			
+			<div className="w-[85%] flex flex-col justify-center items-center space-y-4">
+				<div className="w-[95%] flex justify-start items-start">
+					<div className="w-full flex flex-col justify-between items-end space-y-4">
+						<div className="flex w-full justify-between items-center">
+							<span className="text-light-purple text-2xl">{text}</span>
+							<div className="flex gap-2">
+								<img src="/assets/react.svg" alt="" className="w-[30px] h-[30px]" />
+								<img src="/assets/HTML.svg" alt="" className="w-[30px] h-[30px]" />
+								<img src="/assets/CSS.svg" alt="" className="w-[30px] h-[30px]" />
+							</div>
+						</div>
+	
+						<div className="w-full flex justify-between items-end border-custom-gray space-x-4">
+							<div className="flex w-[90%] flex-col justify-between items-start">
+								<div className="flex flex-col gap-4">
+									{description.map((item, index) => (
+										<div key={index} className="flex items-center gap-2">
+											<span className="text-light-gray text-3xl">•</span>
+											<span className="text-light-gray text-xl">{item}</span>
+										</div>
+									))}
+								</div>
+	
+								<div className="h-[3rem] flex justify-start items-center">
+									<button className="w-[10rem] bg-custom-gray rounded-lg">View More</button>
+								</div>
+							</div>
+	
+							<a href="https://github/nourdine-ouakhroun/ft_transcendence" target="_blank" rel="noreferrer" className="w-[10%] flex justify-end items-end gap-2">
+								<img src="/assets/github.svg" alt="" className="w-[35px] h-[35px]" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
+}	
+
+
+ * 
+*/
+
 const description = {
 	Inception: [
-		"Introduction to the world of virtualization.",
+		"A Docker-based project at 42, setting up WordPress, MariaDB, and Nginx.",
+		"Focuses on containerization, multi-service orchestration, and scalable web environments.",
 	],
 	//give this with new line
 	Transcendence : [
-		"The ft_transcendence project challenges 42 students to build a scalable, full-stack web application.",
+		"A full-stack web app project at 42, combining front-end and back-end skills.",
+		"Focuses on real-time features to enhance client-server integration and dynamic interactions.",
 	],
 	WebServer: [
-		"Introduction to the world of virtualization.",
+		"Build a basic HTTP server from scratch using C++.",
+		"Handle HTTP requests, manage connections, and implement socket programming.",
 	]
 }
 
