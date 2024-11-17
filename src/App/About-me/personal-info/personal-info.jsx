@@ -5,7 +5,7 @@ import Bio from './bio/bio.jsx'
 import { useSelector } from 'react-redux'
 import { Link, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Education from './education/education.jsx'
-import Resume from './resume/resume.jsx'
+import data from '/src/data.json'
 
 function Content({text, component, img}){
     return(
@@ -72,11 +72,12 @@ function PersonalInfoCategory({text, icon, component}) {
         </div>
     )
 }
+{/*"resume" : "/Nourdine_Ouakhroun_cv.pdf",*/}
 
 const DownloadResume = () => {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Nourdine_Ouakhroun_cv.pdf'; // Ensure this matches your file name in the public folder
+    link.href = data.resume;
     link.download = 'Nourdine_Ouakhroun_cv.pdf';
     link.click();
   };

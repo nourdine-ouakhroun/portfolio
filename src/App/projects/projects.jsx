@@ -1,6 +1,6 @@
 import Category from "../category/category"
 import { useState } from 'react';
-
+import data from '/src/data.json'
 
 const Checkmark = () => {
   const [isChecked, setIsChecked] = useState(false);
@@ -77,107 +77,83 @@ function ProjectsFliter()
 {
     return (
         <div className="w-[90%] mt-2">
-            <Languages text="React" icon="/assets/react.svg"/>
-            <Languages text="HTML" icon="/assets/HTML.svg"/>
-            <Languages text="Css" icon="/assets/CSS.svg"/>
-            <Languages text="C" icon="/assets/C.svg"/>
-            <Languages text="C++" icon="/assets/C++.svg"/>
-            <Languages text="Django" icon="/assets/Django.svg"/>
-            <Languages text="Python" icon="/assets/Python.svg"/>
-            <Languages text="Docker" icon="/assets/Docker.svg"/>
+            {
+				data.languages.map((item, index) => (
+					<Languages key={index} text={item.name} icon={item.icon}/>
+				))
+			}
         </div>
     )
 }
 
-// transition duration-500 ease-in-out transform hover:scale-105 hover:border-light-gray 
-function ProjectsCard({description, img, text})
+function ProjectsCard({link, description, img, text, technologies, skills})
 {
-	return (
-		<div className="w-full h-[12rem] flex flex justify-end items-end border border-custom-gray ">
-			<div className="w-full h-full flex justify-center items-start flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
-				<img className="w-[90%] h-full object-contain" src={img} alt="" />
-			</div>
-			<div className="w-[85%] h-full felx flex-col flex justify-center items-center">
-				<div className="w-[95%] h-[80%] flex  justify-start  items-start gap-2">
-					<div className="w-full h-full flex flex-col justify-between items-end">
-						<div className="flex w-full justify-between items-center">
-							<span className="text-light-purple text-2xl">{text}</span>
-							<div className="flex gap-2">
-								<img src="/assets/react.svg" alt="" className="w-[30px] h-[30px]"/>
-								<img src="/assets/HTML.svg" alt="" className="w-[30px] h-[30px]"/>
-								<img src="/assets/CSS.svg" alt="" className="w-[30px] h-[30px]"/>
-							</div>
-						</div>
-						<div className="w-[99%] h-full flex justify-between items-end border-custom-gray">
-							<div className="flex w-[90%] h-full flex flex-col justify-between items-start">
-								<div className="flex h-full flex-col justify-start items-start">
-								{
-									description.map((item, index) => {
-										return (
-											<div key={index} className="flex justify-start items-center gap-2">
-												<span className="text-light-gray text-3xl"> • </span>
-												<span className="text-light-gray text-xl"> {item} </span>
-											</div>
-										)
-									})
-								}
-								</div>
-								<div className="h-[3rem] flex justify-start items-center">
-									<button className="w-[10rem] h-full bg-custom-gray rounded-lg">View More</button>
-								</div>
-							</div>
-							<a href="https://github/nourdine-ouakhroun/ft_transcendence" target="_blank" rel="noreferrer" className="w-[10%] flex h-full justify-end items-end gap-2">
-								<img src="/assets/github.svg" alt="" className="w-[35px] h-[35px]"/>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	)
-}
+	const [isClicked, setIsClicked] = useState(false);
 
-
-/**
- * function ProjectsCard({description, img, text})
-{
+	const handleClick = () => {
+		setIsClicked(!isClicked);
+	}
 	return (
 		<div className="w-full flex justify-end items-end border border-custom-gray">
-			<div className="flex h-full  justify-center items-center flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
+			<div className="min-w-[15rem] flex h-full justify-center items-center flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
 				<img className="w-[90%] object-contain" src={img} alt="" />
 			</div>
 			
-			<div className="w-[85%] flex flex-col justify-center items-center space-y-4">
+			<div className="w-[85%] mt-5 flex flex-col justify-center items-center">
 				<div className="w-[95%] flex justify-start items-start">
-					<div className="w-full flex flex-col justify-between items-end space-y-4">
+					<div className="w-full flex flex-col justify-between items-end">
 						<div className="flex w-full justify-between items-center">
 							<span className="text-light-purple text-2xl">{text}</span>
 							<div className="flex gap-2">
-								<img src="/assets/react.svg" alt="" className="w-[30px] h-[30px]" />
-								<img src="/assets/HTML.svg" alt="" className="w-[30px] h-[30px]" />
-								<img src="/assets/CSS.svg" alt="" className="w-[30px] h-[30px]" />
+								{
+									technologies.map((item, index) => (
+										<img key={index} src={"/assets/" + item + ".svg"} alt="" className="w-[30px] h-[30px]" />
+									))
+								}
 							</div>
 						</div>
 	
-						<div className="w-full flex justify-between items-end border-custom-gray space-x-4">
-							<div className="flex w-[90%] flex-col justify-between items-start">
-								<div className="flex flex-col gap-4">
+						<div className="w-full flex justify-between flex-col  gap-5 items-end border-custom-gray">
+							<div className="flex w-[98%] flex-col justify-between items-start">
+								<div className="flex flex-col">
 									{description.map((item, index) => (
+										!isClicked && index >= 2 ? null :
+
 										<div key={index} className="flex items-center gap-2">
 											<span className="text-light-gray text-3xl">•</span>
 											<span className="text-light-gray text-xl">{item}</span>
 										</div>
 									))}
-								</div>
-	
-								<div className="h-[3rem] flex justify-start items-center">
-									<button className="w-[10rem] bg-custom-gray rounded-lg">View More</button>
+									{
+										isClicked && 
+										<div className="flex gap-2 justify-start items-center">
+											<span className="text-light-gray text-3xl">•</span>
+											<span className="text-light-gray text-xl">Skills: </span>
+											{
+												skills.map((item, index) => (
+													<div key={index} className="flex items-center">
+														<span className="text-light-gray text-xl">{item}</span>
+														{
+															index !== skills.length - 1 &&
+															<span className="text-light-gray text-xl">,</span>
+														}
+													</div>
+												))
+											}
+										</div>
+									}
 								</div>
 							</div>
-	
-							<a href="https://github/nourdine-ouakhroun/ft_transcendence" target="_blank" rel="noreferrer" className="w-[10%] flex justify-end items-end gap-2">
-								<img src="/assets/github.svg" alt="" className="w-[35px] h-[35px]" />
-							</a>
+							<div className="w-full mb-5 flex justify-between items-center">
+								<div className="flex justify-start items-center">
+									<button className="w-[10rem] bg-custom-gray rounded-lg" onClick={handleClick}>{
+										isClicked ? "View Less" : "View More"
+									}</button>
+								</div>
+								<a href={link} target="_blank" rel="noreferrer" className="w-[10%] flex justify-end items-end gap-2">
+									<img src="/assets/github.svg" alt="" className="w-[35px] h-[35px]" />
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -185,35 +161,24 @@ function ProjectsCard({description, img, text})
 		</div>
 	)
 }	
+// "demo": "https:/www.youtube.com/watch?v=3JZDZQ1v8Qw"
 
-
- * 
-*/
-
-const description = {
-	Inception: [
-		"A Docker-based project at 42, setting up WordPress, MariaDB, and Nginx.",
-		"Focuses on containerization, multi-service orchestration, and scalable web environments.",
-	],
-	//give this with new line
-	Transcendence : [
-		"A full-stack web app project at 42, combining front-end and back-end skills.",
-		"Focuses on real-time features to enhance client-server integration and dynamic interactions.",
-	],
-	WebServer: [
-		"Build a basic HTTP server from scratch using C++.",
-		"Handle HTTP requests, manage connections, and implement socket programming.",
-	]
-}
 
 function ProjectsList()
 {
     return(
 		<div className="[&::-webkit-scrollbar]:hidden w-[95%] h-[85%] flex flex-col items-start flex-wrap overflow-y-auto gap-5">
-			<ProjectsCard description={description.Transcendence} img={"/assets/tranc.svg"} text={"ft_transcendence"}/>
-			<ProjectsCard description={description.WebServer} img={"/assets/nginx.png"} text={"WebServer"}/>
-			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
-			<ProjectsCard description={description.Inception} img={"/assets/Docker-Logo.png"} text={"Inception"}/>
+			{
+				data.projects.map((item, index) => (
+					<ProjectsCard 
+						key={index}
+						link={item.link}
+					 	description={item.description}
+						img={item.img} text={item.name}
+						technologies={item.tech}
+						skills={item.skills}/>
+				))
+			}
 		</div>
     )
 }

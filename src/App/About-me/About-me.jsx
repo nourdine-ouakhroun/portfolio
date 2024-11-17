@@ -5,6 +5,7 @@ import {PersonalInfo, PersonalInfoContent} from './personal-info/personal-info.j
 import { Route, Routes, Link, useLocation, useNavigate } from 'react-router-dom'
 import Contacts from './contactes/contacts.jsx'
 import { useEffect, useState } from 'react'
+import data from '/src/data.json'
 
 function CustomLink({path, img}){
     const location = useLocation()

@@ -1,0 +1,140 @@
+
+{
+    "name": "nourdine ouakhroun",
+    "job": "Software Engineer",
+    "resume" : "https://drive.google.com/file/d/1quLDtukSjPuQvJsPu0lI4ELFsFe5hpNp/view?usp=drive_link",
+    "contact": {
+        "email": "nourdineoukhroun@gmail.com",
+        "phone": "+212 770311302",
+        "socials": 
+            [
+                {
+                    "platform": "GitHub",
+                    "link": "https:/www.github.com/nourdine-ouakhroun",
+                    "icon": "/assets/github.svg"
+                },
+                {
+                    "platform": "LinkedIn",
+                    "link": "https:/www.linkedin.com/in/nourdine-ouakhroun",
+                    "icon": "/assets/linkedin.svg"
+                }
+            ]
+    },
+    
+    "bio": [
+        "/**",
+        "  * I'm Nourdine Ouakhroun, a passionate software ",
+        "  * engineering student from Morocco, currently ",
+        "  * honing my skills at 1337 Coding School, ",
+        "  * part of the prestigious 42 Network.",
+        "  * ",
+        "  * I'm a 21-year-old full-stack software engineer ",
+        "  * with a deep interest in building efficient, ",
+        "  * scalable, and innovative solutions. My journey",
+        " * in software development has equipped me with ",
+        " * a strong foundation in both front-end and ",
+        " * back-end technologies, allowing me to create",
+        " * impactful applications.",
+        " */ "
+    ],
+    "projects": [
+        {
+            "name": "Inception",
+            "description": [
+                "A Docker-based project at 42, setting up WordPress, MariaDB, and Nginx.",
+                "Focuses on containerization, multi-service orchestration, and scalable web environments.",
+                "Focuses on containerization, multi-service orchestration, and scalable web environments."
+            ],
+            "img": "/assets/Docker-Logo.png",
+            "link": "https:/www.github.com/nourdine-ouakhroun/inception",
+            "tech": ["Docker", "WordPress", "MariaDB", "Nginx", "Shell Scripting"],
+            "skills": ["Containerization", "Multi-Service Orchestration", "Scalable Web Environments"]
+        },
+        {
+            "name": "Transcendence",
+            "description" : [
+                "A full-stack web app project at 42, combining front-end and back-end skills.",
+                "Focuses on real-time features to enhance client-server integration and dynamic interactions.",
+                "Focuses on real-time features to enhance client-server integration and dynamic interactions."
+            ],
+            "img": "/assets/tranc.svg",
+            "link": "https:/www.github.com/nourdine-ouakhroun/transcendence",
+            "tech": ["JavaScript", "Django", "Python", "HTML", "CSS", "WebSockets", "REST API"],
+            "skills": ["Full-Stack Development", "Real-Time Features", "Client-Server Integration"]
+        },
+        {
+            "name": "WebServer",
+            "description": [
+                "Build a basic HTTP server from scratch using C++.",
+                "Handle HTTP requests, manage connections, and implement socket programming.",
+                "Handle HTTP requests, manage connections, and implement socket programming."
+            ],
+            "img": "/assets/nginx.png",
+            "link": "https:/www.github.com/nourdine-ouakhroun/webserver",
+            "tech": ["C++", "HTTP", "Socket Programming"],
+            "skills": ["HTTP Requests", "Socket Programming", "Connection Management", "Server Implementation", "Network Protocols"]
+        }
+    ],
+    "languages": [
+        {
+            "name": "JavaScript",
+            "icon": "/assets/JavaScript.svg"
+        },
+        {
+            "name": "React",
+            "icon": "/assets/react.svg"
+        },
+        {
+            "name": "HTML",
+            "icon": "/assets/HTML.svg"
+        },
+        {
+            "name": "CSS",
+            "icon": "/assets/CSS.svg"
+        },
+        {
+            "name": "C",
+            "icon": "/assets/C.svg"
+        },
+        {
+            "name": "C++",
+            "icon": "/assets/C++.svg"
+        },
+        {
+            "name": "Django",
+            "icon": "/assets/Django.svg"
+        },
+        {
+            "name": "Python",
+            "icon": "/assets/Python.svg"
+        },
+        {
+            "name": "Docker",
+            "icon": "/assets/Docker.svg"
+        }
+
+    ],
+    "education": [
+        "/**",
+        " *",
+        " * EDUCATION JOURNEY",
+        " *",
+        " *     2022 — 2024",
+        " *         Software Engineering at 1337 Coding School, 42 Network",
+        " *         Tétouan, Morocco",
+        " *         Focus: Full-Stack Development, Algorithms, Data Structures",
+        " *         Skills: Project Management, Version Control, Self-learning",
+        " *",
+        " *     2020 — 2023",
+        " *         Licentiate Degree in Economics and Management",
+        " *         Ibn Zohr University, FSJES-CUAM Agadir, Ait Melloul",
+        " *         Specialization: Management",
+        " *         Achievement: Graduated with a focus on leadership and teamwork",
+        " *         Skills: Project Management, Communication, Business Strategy",
+        " */"
+    ],
+    "image": {
+        "name": "nouakhro.jpeg",
+        "src": "/assets/nouakhro-none_background.jpeg"
+    }
+}

@@ -2,33 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { removeComponent, toggleComponent } from "../../../../componentsSlice";
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-const lines = [
-    "/**",
-    " *",
-    " * EDUCATION JOURNEY",
-    " *",
-    " *     2022 — 2024",
-    " *         Software Engineering at 1337 Coding School, 42 Network",
-    " *         Tétouan, Morocco",
-    " *         Focus: Full-Stack Development, Algorithms, Data Structures",
-    " *         Skills: Project Management, Version Control, Self-learning",
-    " *",
-    " *     2020 — 2023",
-    " *         Licentiate Degree in Economics and Management",
-    " *         Ibn Zohr University, FSJES-CUAM Agadir, Ait Melloul",
-    " *         Specialization: Management",
-    " *         Achievement: Graduated with a focus on leadership and teamwork",
-    " *         Skills: Project Management, Communication, Business Strategy",
-    " */"
-];
-  
+import data from '/src/data.json'
+
+
   
 function Writer({Lines, length}){
 
     return(<>
         <div className='w-[95%] h-[95%] flex'>
             <div className="w-[4rem]">
-                {/* print just numbers */}
                 {
                     Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
                         return (
@@ -55,43 +37,6 @@ function Writer({Lines, length}){
     </>)
 }
 
-function MyImg(){
-
-    return(<>
-        {/* <img className="absolute" src="/assets/Background Blurs.svg" alt="" /> */}
-        <div className='w-[90%] h-[90%] relative flex justify-center items-start drop-shadow-[80px_30px_10px_rgba(0,0,0,1)]'>
-            <img 
-                className="
-                w-[80%]
-                opacity-80
-                " 
-                src="/assets/nouakhro-none_background.jpeg" 
-                alt="Profile Image"
-            />
-        </div>
-        {/* <div className='w-[90%] h-[90%] relative flex justify-center items-start'>
-            <img 
-                className="
-                w-[100%]
-                opacity-80
-                " 
-                src="/assets/nouakhro.jpeg" 
-                alt="Profile Image"
-            />
-        </div> */}
-    </>)
-}
-
-
-// const BioComponent = [
-//     {
-//         img : '/assets/readmi.svg',
-//         text: 'education.md',
-//         component: <Writer Lines={lines}/>
-//     },
-// ]
-
-
 function Education() {
     const dispatch = useDispatch();
     const selectedComponents = useSelector(
@@ -104,13 +49,12 @@ function Education() {
         dispatch(toggleComponent(data));
     };
   
-    // Trigger actions when the component mounts
     useEffect(() => {
         if (locationPath) {
             handleClick({
                 img: '/assets/readmi.svg',
                 text: 'education.md',
-                component: <Writer Lines={lines} length={lines.length}/>
+                component: <Writer Lines={data.education} length={data.education.length}/>
             });
         }
         else {

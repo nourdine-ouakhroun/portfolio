@@ -1,3 +1,5 @@
+import data from '/src/data.json'
+
 function Component({img, text}){
     return (
         <div className="w-[90%] h-[3rem] flex justify-start items-center gap-3">
@@ -10,8 +12,8 @@ function Component({img, text}){
 function Contacts(){
     return(
         <div className="w-full h-[7rem] flex flex-col justify-center items-center">
-            <Component img="/assets/mail-icon.svg" text="nourdineoukhroun@gmail.com"/>
-            <Component img="/assets/phone-icon.svg" text="+212620704142"/>
+            <Component img="/assets/mail-icon.svg" text={data.contact.email}/>
+            <Component img="/assets/phone-icon.svg" text={data.contact.phone}/>
         </div>
     )
 }
