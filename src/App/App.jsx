@@ -12,7 +12,7 @@ function AppComponent() {
 	const location = useLocation();
 	const isHomePage = location.pathname === '/';
 	return (
-		<div className={`${isHomePage ? 'bg-home' : ''} app w-full h-full bg-custom-blue text-white border border-gray-800`}>
+		<div className={`${isHomePage ? 'bg-home' : ''} app w-full h-full bg-custom-blue text-white border border-gray-800 `}>
 			<HeaderBar />
 			<Routes>
 				<Route path='/' element={<Main component={<Hello />} />} />

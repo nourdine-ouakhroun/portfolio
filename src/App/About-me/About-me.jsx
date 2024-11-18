@@ -32,11 +32,8 @@ function AboutMe(){
     return(
         <div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr]  justify-start items-center flex-col">
             <div className='flex w-full h-full md:border-r-[1px] border-r-custom-gray'>
-                <div className='w-[5rem] h-full md:border-r-[1px] border-r-custom-gray'>
+                <div className='hidden md:flex flex-col w-[5rem] h-full md:border-r-[1px] border-r-custom-gray'>
                     <CustomLink img="/assets/personal-icon.svg" path='personal-info'/>
-                    {/* <CustomLink img="/assets/personal-icon.svg" path='personal-info'/> */}
-                    {/* <CustomLink img="/assets/Shell Scripting.svg" path='professional-info'/>
-                    <CustomLink img="/assets/hobbies-icon.svg" path='hobbies'/> */}
                     <div className='h-[5rem] flex justify-center items-center'>
                         <img className={`w-[50%]  opacity-40 `} src={'/assets/Shell Scripting.svg'} alt="" />
                     </div>
@@ -50,8 +47,6 @@ function AboutMe(){
                     </div>
                     <Routes>
                         <Route path='personal-info/*' element={<Category name="personal-info" component={<PersonalInfo/>}/>}/>
-                        <Route path='professional-info/*' element={<Category name="professional-info" component={<></>}/>}/>
-                        <Route path='hobbies/*' element={<Category name="hobbies" component={<></>}/>}/>
                     </Routes>
                     <Category name="contacts" component={<Contacts/>}/>
                 </div>
@@ -59,8 +54,6 @@ function AboutMe(){
             <div className='flex w-full h-full'>
                 <Routes>
                     <Route path='personal-info/*' element={<PersonalInfoContent/>}/>
-                    <Route path='professional-info/*' element={<></>}/>
-                    <Route path='hobbies/*' element={<></>}/>
                 </Routes>
             </div>
         </div>
