@@ -42,20 +42,19 @@ const Checkmark = () => {
 function Content(){
   return(
 		<div className='w-full h-full flex flex-col border-r-[1px] border-r-custom-gray'>
-				<div className='w-full h-[4rem] border-b-[1px] border-b-custom-gray'>
+				<div className='w-full border-b-[1px] border-b-custom-gray'>
 					<div className='flex justify-center items-center h-full w-[19rem] border-r-[1px] border-r-custom-gray'>
-						<div className='flex justify-between items-center w-[90%]'>
-								<span className='text-2xl text-light-gray'>{
-								}</span>
+						<div className='h-[4rem] flex justify-between items-center w-[90%]'>
+								<span className='text-2xl text-light-gray '>
+									Projects
+								</span>
 							<img src="/assets/x.svg" alt=""/>
 						</div>
 					</div>
 				</div>
-				{
-					<div className='flex justify-center items-center w-full h-full'>
-						<ProjectsList/>
-					</div>
-				}
+				<div className='flex justify-center items-center w-full h-full'>
+					<ProjectsList/>
+				</div>
 		</div>
   )
 }
@@ -167,7 +166,7 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 function ProjectsList()
 {
     return(
-		<div className="[&::-webkit-scrollbar]:hidden w-[95%] h-[85%] flex flex-col items-start flex-wrap overflow-y-auto gap-5">
+		<div className="[&::-webkit-scrollbar]:hidden w-[95%] h-[90%] flex flex-col items-start  overflow-y-auto gap-5">
 			{
 				data.projects.map((item, index) => (
 					<ProjectsCard 
@@ -189,10 +188,10 @@ function Projects()
         <div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr]  justify-start items-center flex-col">
             <div className='flex w-full h-full md:border-r-[1px] border-r-custom-gray'>
                 <div className='w-full h-full md:border-r-[1px] border-r-custom-gray'>
-                    <Category name="Projects" component={<ProjectsFliter/>}/>
+                    <Category name="Felter" component={<ProjectsFliter/>}/>
                 </div>
             </div>
-            <div className="w-full h-full  scrollbar-none scrollbar-hide  no-scrollbar">
+            <div className="w-full h-full overflow-hidden">
 				<Content/>
             </div>
         </div>

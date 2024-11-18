@@ -6,7 +6,7 @@
 	border-radius: 8px 8px 8px 8px;
 	display: grid;
 	grid-template : "header" 85px "main" 1fr;
-	overflow-x: hidden;
+	overflow: hidden;
     @apply bg-no-repeat bg-cover bg-right;
 }
 

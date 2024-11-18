@@ -40,7 +40,8 @@ function MyImg(){
         <div className='w-[90%] h-[90%] relative flex justify-center items-start drop-shadow-[80px_30px_10px_rgba(0,0,0,1)]'>
             <img 
                 className="
-                w-[80%]
+                min-w-[40rem]
+                w-[42rem]
                 opacity-80
                 " 
                 src={data.image.src}

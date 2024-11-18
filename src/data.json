@@ -23,14 +23,14 @@
     
     "bio": [
         "/**",
-        "  * I'm Nourdine Ouakhroun, a passionate software ",
-        "  * engineering student from Morocco, currently ",
-        "  * honing my skills at 1337 Coding School, ",
-        "  * part of the prestigious 42 Network.",
-        "  * ",
-        "  * I'm a 21-year-old full-stack software engineer ",
-        "  * with a deep interest in building efficient, ",
-        "  * scalable, and innovative solutions. My journey",
+        " * I'm Nourdine Ouakhroun, a passionate software ",
+        " * engineering student from Morocco, currently ",
+        " * honing my skills at 1337 Coding School, ",
+        " * part of the prestigious 42 Network.",
+        " * ",
+        " * I'm a 21-year-old full-stack software engineer ",
+        " * with a deep interest in building efficient, ",
+        " * scalable, and innovative solutions. My journey",
         " * in software development has equipped me with ",
         " * a strong foundation in both front-end and ",
         " * back-end technologies, allowing me to create",
@@ -59,26 +59,63 @@
             ],
             "img": "/assets/tranc.svg",
             "link": "https:/www.github.com/nourdine-ouakhroun/transcendence",
-            "tech": ["JavaScript", "Django", "Python", "HTML", "CSS", "WebSockets", "REST API"],
+            "tech": ["javascript", "Django", "Python", "HTML", "CSS", "WebSocket", "rest api"],
             "skills": ["Full-Stack Development", "Real-Time Features", "Client-Server Integration"]
+        },
+        {
+            "name": "Portfolio",
+            "description": [
+                "A personal project to showcase my skills and projects.",
+                "Focuses on responsive design, user experience, and visual appeal.",
+                "Focuses on responsive design, user experience, and visual appeal."
+            ],
+            "img": "/assets/portfolio.png",
+            "link": "https:/www.github.com/nourdine-ouakhroun/portfolio",
+            "tech": ["react", "javascript", "HTML", "CSS"],
+            "skills": ["Responsive Design", "User Experience", "Visual Appeal"]
         },
         {
             "name": "WebServer",
             "description": [
                 "Build a basic HTTP server from scratch using C++.",
-                "Handle HTTP requests, manage connections, and implement socket programming.",
+                "Handle HTTP requests, manage c onnections, and implement socket programming.",
                 "Handle HTTP requests, manage connections, and implement socket programming."
             ],
             "img": "/assets/nginx.png",
             "link": "https:/www.github.com/nourdine-ouakhroun/webserver",
-            "tech": ["C++", "HTTP", "Socket Programming"],
+            "tech": ["C++"],
             "skills": ["HTTP Requests", "Socket Programming", "Connection Management", "Server Implementation", "Network Protocols"]
+        },
+        {
+            "name": "Cub3D",
+            "description": [
+                "A 42 project that involves raycasting to create a 3D maze using the C language.",
+                "Focuses on graphics programming, optimization, and algorithmic thinking.",
+                "Focuses on graphics programming, optimization, and algorithmic thinking."
+            ],
+            "img": "/assets/Cub3D.webp",
+            "link": "https:/www.github.com/nourdine-ouakhroun/cub3d",
+            "tech": ["C"],
+            "skills": ["Raycasting", "Graphics Programming", "Optimization", "Algorithmic Thinking"]
+        },
+        {
+            "name": "Minishell",
+            "description": [
+                "A 42 project that involves building a basic shell using C.",
+                "Focuses on parsing, executing commands, and managing processes.",
+                "Focuses on parsing, executing commands, and managing processes."
+            ],
+            "img": "/assets/shell.svg",
+            "link": "https:/www.github.com/nourdine-ouakhroun/minishell",
+            "tech": ["C"],
+            "skills": ["Shell Implementation", "Command Execution", "Process Management", "Parsing"]
         }
+
     ],
     "languages": [
         {
             "name": "JavaScript",
-            "icon": "/assets/JavaScript.svg"
+            "icon": "/assets/javascript.svg"
         },
         {
             "name": "React",

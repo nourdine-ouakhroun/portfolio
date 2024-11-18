@@ -3,7 +3,7 @@ import data from '/src/data.json'
 function Component({img, text}){
     return (
         <div className="w-[90%] h-[3rem] flex justify-start items-center gap-3">
-            <img className="w-[7%]" src={img} alt="" />
+            <img className="w-[2rem]" src={img} alt="" />
             <span className="text-xl text-light-gray">{text}</span>
         </div>
     )
