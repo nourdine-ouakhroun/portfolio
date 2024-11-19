@@ -23,7 +23,7 @@ function Content({text, component, img}){
                 <div className='w-full h-full flex justify-center items-center'>
                     {component}
                 </div>
-                <div className='flex justify-center  w-[3rem] h-full border-l-[1px] border-l-custom-gray'>
+                <div className='hidden md:flex justify-center  w-[3rem] h-full border-l-[1px] border-l-custom-gray'>
                     <div className='mt-2 w-[2rem] h-[13px] bg-light-gray'></div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ export function PersonalInfoContent() {
   );
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-[full] justify-center items-center">
+    <div className="flex flex-col md:flex-row w-full h-full justify-start items-center">
       {
         selectedComponents.length > 0 ? (
             selectedComponents.map(({ img, text, component }, index) => (
@@ -64,9 +64,9 @@ function PersonalInfoCategory({text, icon, component}) {
     return(
         <div className='flex flex-col w-[85%] mb-[7px]'>
             <Link to={text} className={costumStyle.container + ' h-[40px]'} onClick={clickhandler}>
-                <img className={`w-[11px] mr-4 ${show  ? 'rotate-90' : ''}`} src="/assets/arow.svg" alt="" />
-                <img className="w-[23px] mr-3" src={icon} alt="" />
-                <span className={`text-2xl ${show ? "text-white" : "text-steel-blue"}`}>{text}</span>
+                <img className={`mr-4 ${show  ? 'rotate-90' : ''}`} src="/assets/arow.svg" alt="" />
+                <img className="mr-3" src={icon} alt="" />
+                <span className={`md:text-2xl ${show ? "text-white" : "text-steel-blue"}`}>{text}</span>
             </Link>
             <div className={!show ? 'hidden' : 'flex flex justify-end items-center'} >{component}</div>
         </div>
@@ -89,7 +89,7 @@ const DownloadResume = () => {
     >
       <div className="flex justify-start items-center">
         <img src="/assets/resum.svg" alt="Resume Icon" />
-        <span className="text-2xl text-light-gray">my_resume.pdf</span>
+        <span className="md:text-2xl text-light-gray">my_resume.pdf</span>
       </div>
     </div>
   );

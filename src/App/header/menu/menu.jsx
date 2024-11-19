@@ -16,7 +16,7 @@ function CustomLink({text, style='', path, onLinkClick}){
 
 function Menu({isOpen, onLinkClick}){
     return(
-        <nav className="flex-col md:flex-row " style={{display: isOpen ? 'none' : 'flex'}}>
+        <nav className="flex-col md:flex-row z-[4]" style={{display: isOpen ? 'none' : 'flex'}}>
             <ul className='flex flex-col md:flex-row'>
                 <CustomLink onLinkClick={onLinkClick} text='_home' path="/"/>
                 <CustomLink onLinkClick={onLinkClick} text='_about-me' path="/about-me"/>

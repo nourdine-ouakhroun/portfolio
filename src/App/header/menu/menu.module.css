@@ -24,11 +24,11 @@ ul {
 
 .routerlink {
     width: 100%;
-    height: 80p5;
+    height: 85px;
     border-bottom: 1px solid #1E2D3D;
     color: white;
     display: flex;
-    align-items: center;
+    align-items: start;
     cursor: pointer;
     justify-content: center;
     flex-direction: column;
@@ -44,6 +44,7 @@ ul {
         border-bottom: none;
         width: 12rem;
         border-right: 1px solid #1E2D3D;
+        align-items: center;
     }
     .routerlink p{
         margin: 0;

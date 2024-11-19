@@ -65,7 +65,7 @@ function Languages({text, icon})
         <div className="w-[40%] h-[3rem] flex justify-between items-center cursor-pointer">
             <Checkmark/>
             <div className="flex w-[70%] justify-start items-center gap-3">
-                <img src={icon} alt="" className="w-[30px] h-[30px]"/>
+                <img src={icon} alt="" className=""/>
                 <spain className="text-white text-2xl">{text}</spain>
             </div>
         </div>
@@ -106,7 +106,7 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 							<div className="flex gap-2">
 								{
 									technologies.map((item, index) => (
-										<img key={index} src={"/assets/" + item + ".svg"} alt="" className="w-[30px] h-[30px]" />
+										<img key={index} src={"/assets/" + item + ".svg"} alt="" className="" />
 									))
 								}
 							</div>
@@ -150,7 +150,7 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 									}</button>
 								</div>
 								<a href={link} target="_blank" rel="noreferrer" className="w-[10%] flex justify-end items-end gap-2">
-									<img src="/assets/github.svg" alt="" className="w-[35px] h-[35px]" />
+									<img src="/assets/github.svg" alt="" className="" />
 								</a>
 							</div>
 						</div>
@@ -188,7 +188,7 @@ function Projects()
         <div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr]  justify-start items-center flex-col">
             <div className='flex w-full h-full md:border-r-[1px] border-r-custom-gray'>
                 <div className='w-full h-full md:border-r-[1px] border-r-custom-gray'>
-                    <Category name="Felter" component={<ProjectsFliter/>}/>
+                    <Category name="Filter" component={<ProjectsFliter/>}/>
                 </div>
             </div>
             <div className="w-full h-full overflow-hidden">

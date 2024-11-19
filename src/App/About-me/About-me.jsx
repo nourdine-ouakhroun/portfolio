@@ -12,7 +12,7 @@ function CustomLink({path, img}){
     const isMatching = location.pathname.includes(path)
     return(
         <Link className='h-[5rem] flex justify-center items-center' to={path}>
-            <img className={`w-[50%]  ${!isMatching ? 'opacity-40' : ''}`} src={img} alt="" />
+            <img className={`${!isMatching ? 'opacity-40' : ''}`} src={img} alt="" />
         </Link>
     )
 }
@@ -30,15 +30,15 @@ function AboutMe(){
     }, [hasNavigated, navigate]);
 
     return(
-        <div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr]  justify-start items-center flex-col">
+        <div className="w-full h-full about-me flex md:grid md:grid-cols-[1fr_4fr] justify-between items-center flex-col overflow-y-auto">
             <div className='flex w-full h-full md:border-r-[1px] border-r-custom-gray'>
                 <div className='hidden md:flex flex-col w-[5rem] h-full md:border-r-[1px] border-r-custom-gray'>
                     <CustomLink img="/assets/personal-icon.svg" path='personal-info'/>
                     <div className='h-[5rem] flex justify-center items-center'>
-                        <img className={`w-[50%]  opacity-40 `} src={'/assets/Shell Scripting.svg'} alt="" />
+                        <img className={`opacity-40 `} src={'/assets/Shell Scripting.svg'} alt="" />
                     </div>
                     <div className='h-[5rem] flex justify-center items-center'>
-                        <img className={`w-[50%]  opacity-40 `} src={'/assets/hobbies-icon.svg'} alt="" />
+                        <img className={`opacity-40 `} src={'/assets/hobbies-icon.svg'} alt="" />
                     </div>
                 </div>
                 <div className='w-full h-full md:border-r-[1px] border-r-custom-gray'>

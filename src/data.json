@@ -22,20 +22,11 @@
     },
     
     "bio": [
-        "/**",
-        " * I'm Nourdine Ouakhroun, a passionate software ",
-        " * engineering student from Morocco, currently ",
-        " * honing my skills at 1337 Coding School, ",
-        " * part of the prestigious 42 Network.",
-        " * ",
-        " * I'm a 21-year-old full-stack software engineer ",
-        " * with a deep interest in building efficient, ",
-        " * scalable, and innovative solutions. My journey",
-        " * in software development has equipped me with ",
-        " * a strong foundation in both front-end and ",
-        " * back-end technologies, allowing me to create",
-        " * impactful applications.",
-        " */ "
+        " ",
+        "I'm Nourdine Ouakhroun, a passionate software engineering student from Morocco, currently honing my skills at 1337 Coding School, part of the prestigious 42 Network.",
+        " ",
+        "I'm a 21-year-old full-stack software engineer with a deep interest in building efficient, scalable, and innovative solutions. My journey in software development has equipped me with a strong foundation in both front-end and back-end technologies, allowing me to create impactful applications.",
+        " "
     ],
     "projects": [
         {
@@ -71,7 +62,7 @@
             ],
             "img": "/assets/portfolio.png",
             "link": "https:/www.github.com/nourdine-ouakhroun/portfolio",
-            "tech": ["react", "javascript", "HTML", "CSS"],
+            "tech": ["react", "javascript", "HTML", "CSS", "Tailwind"],
             "skills": ["Responsive Design", "User Experience", "Visual Appeal"]
         },
         {
