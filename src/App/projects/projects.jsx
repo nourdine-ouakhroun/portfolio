@@ -42,7 +42,7 @@ const Checkmark = () => {
 function Content(){
   return(
 		<div className='w-full h-full flex flex-col border-r-[1px] border-r-custom-gray'>
-				<div className='w-full border-b-[1px] border-b-custom-gray'>
+				<div className='hidden md:flex  w-full border-b-[1px] border-b-custom-gray'>
 					<div className='flex justify-center items-center h-full w-[19rem] border-r-[1px] border-r-custom-gray'>
 						<div className='h-[4rem] flex justify-between items-center w-[90%]'>
 								<span className='text-2xl text-light-gray '>
@@ -85,6 +85,7 @@ function ProjectsFliter()
     )
 }
 
+
 function ProjectsCard({link, description, img, text, technologies, skills})
 {
 	const [isClicked, setIsClicked] = useState(false);
@@ -93,15 +94,24 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 		setIsClicked(!isClicked);
 	}
 	return (
-		<div className="w-full flex justify-end items-end border border-custom-gray">
-			<div className="min-w-[15rem] flex h-full justify-center items-center flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
+		<div className="w-full flex flex-col md:flex-row justify-end items-end border border-custom-gray">
+			<div className="min-w-[15rem] flex  flex-col h-full justify-center items-center flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
+				<div className="md:hidden flex w-full justify-between items-center p-2 ">
+					<div className="flex gap-2 w-full justify-end items-center">
+						{
+							technologies.map((item, index) => (
+								<img key={index} src={"/assets/" + item + ".svg"} alt="" className="" />
+							))
+						}
+					</div>
+				</div>
 				<img className="w-[90%] object-contain" src={img} alt="" />
 			</div>
 			
-			<div className="w-[85%] mt-5 flex flex-col justify-center items-center">
+			<div className="w-full mt-5 flex flex-col justify-center items-center">
 				<div className="w-[95%] flex justify-start items-start">
 					<div className="w-full flex flex-col justify-between items-end">
-						<div className="flex w-full justify-between items-center">
+						<div className="hidden md:flex w-full justify-between items-center">
 							<span className="text-light-purple text-2xl">{text}</span>
 							<div className="flex gap-2">
 								{
@@ -113,16 +123,18 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 						</div>
 	
 						<div className="w-full flex justify-between flex-col  gap-5 items-end border-custom-gray">
-							<div className="flex w-[98%] flex-col justify-between items-start">
+							<div className="hidden md:flex w-[98%] flex-col justify-between items-start">
 								<div className="flex flex-col">
-									{description.map((item, index) => (
-										!isClicked && index >= 2 ? null :
+									{
+										description.map((item, index) => (
+											!isClicked && index >= 2 ? null :
 
-										<div key={index} className="flex items-center gap-2">
-											<span className="text-light-gray text-3xl">•</span>
-											<span className="text-light-gray text-xl">{item}</span>
-										</div>
-									))}
+											<div key={index} className="flex items-center gap-2">
+												<span className="text-light-gray text-3xl">•</span>
+												<span className="text-light-gray text-xl break-words">{item}</span>
+											</div>
+										))
+									}
 									{
 										isClicked && 
 										<div className="flex gap-2 justify-start items-center">
@@ -160,6 +172,8 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 		</div>
 	)
 }	
+
+
 // "demo": "https:/www.youtube.com/watch?v=3JZDZQ1v8Qw"
 
 
@@ -185,13 +199,13 @@ function ProjectsList()
 function Projects()
 {
     return (
-        <div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr]  justify-start items-center flex-col">
-            <div className='flex w-full h-full md:border-r-[1px] border-r-custom-gray'>
-                <div className='w-full h-full md:border-r-[1px] border-r-custom-gray'>
+        <div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr] justify-start items-start flex-col overflow-y-auto relative">
+            <div className='flex w-full  absolute md:relative bg-custom-blue'>
+                <div className='w-full '>
                     <Category name="Filter" component={<ProjectsFliter/>}/>
                 </div>
             </div>
-            <div className="w-full h-full overflow-hidden">
+            <div className="w-full h-full overflow-hidden md:border-l-[1px] border-l-custom-gray">
 				<Content/>
             </div>
         </div>

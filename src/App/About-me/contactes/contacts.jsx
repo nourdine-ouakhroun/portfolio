@@ -11,7 +11,7 @@ function Component({img, text}){
 
 function Contacts(){
     return(
-        <div className="w-full h-[7rem] flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
             <Component img="/assets/mail-icon.svg" text={data.contact.email}/>
             <Component img="/assets/phone-icon.svg" text={data.contact.phone}/>
         </div>

@@ -17,8 +17,8 @@ function Writer({Lines, length}){
     }, []);
 
     return(<>
-        <div className='w-[90%] min-w-[40rem] h-[95%] flex'>
-            <div className="w-[7rem] hidden md:flex items-start justify-between">
+        <div className='w-[90%] min-w-[35rem] max-w-[40rem] h-[95%] flex'>
+            <div className="w-[7rem] hidden 2xl:flex items-start justify-between">
                 <div className="flex flex-col items-end">
                     {
                         Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
@@ -36,7 +36,7 @@ function Writer({Lines, length}){
                             return (
                                 <p key={index} className='text-light-gray md:text-2xl'>
                                     {
-                                        index === 0 ? '/**' : index === Math.ceil(length) - 1 ? '*/' : '*'  
+                                        index === 0 ? '/**' : index === length - 1 ? '*/' : '*'  
                                     }
                                 </p>
                         )})
@@ -47,7 +47,7 @@ function Writer({Lines, length}){
                 {
                     Lines.map((line, index)=>{
                         return (
-                            <p key={index} className='text-light-gray md:text-2xl whitespace-pre-wrap'>
+                            <p key={index} className='text-light-gray md:text-lg lg:text-xl 3xl:text-2xl  whitespace-pre-wrap'>
                                 {`${line}`}
                             </p>
                         )
@@ -65,7 +65,7 @@ function MyImg(){
         <div className='w-[90%] h-[90%] relative flex justify-center items-start drop-shadow-[80px_30px_10px_rgba(0,0,0,1)]'>
             <img 
                 className="
-                md:min-w-[40rem]
+                md:min-w-[35rem]
                 w-[42rem]
                 opacity-80
                 " 
@@ -96,7 +96,7 @@ function Bio() {
                 handleClick({
                     img: '/assets/readmi.svg',
                     text: 'about-me.md',
-                    component: <Writer Lines={data.bio} length={totalLength / 25}/>
+                    component: <Writer Lines={data.bio} length={Math.ceil(totalLength / 25)}/>
                 });
                 handleClick({
                     img: '/assets/img.svg',

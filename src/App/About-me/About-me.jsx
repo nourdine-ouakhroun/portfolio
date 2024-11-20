@@ -32,7 +32,7 @@ function AboutMe(){
     return(
         <div className="w-full h-full about-me flex md:grid md:grid-cols-[1fr_4fr] justify-between items-center flex-col overflow-y-auto">
             <div className='flex w-full h-full md:border-r-[1px] border-r-custom-gray'>
-                <div className='hidden md:flex flex-col w-[5rem] h-full md:border-r-[1px] border-r-custom-gray'>
+                <div className='hidden 3xl:flex flex-col w-[5rem] h-full md:border-r-[1px] border-r-custom-gray'>
                     <CustomLink img="/assets/personal-icon.svg" path='personal-info'/>
                     <div className='h-[5rem] flex justify-center items-center'>
                         <img className={`opacity-40 `} src={'/assets/Shell Scripting.svg'} alt="" />
@@ -48,7 +48,7 @@ function AboutMe(){
                     <Routes>
                         <Route path='personal-info/*' element={<Category name="personal-info" component={<PersonalInfo/>}/>}/>
                     </Routes>
-                    <Category name="contacts" component={<Contacts/>}/>
+                    {/* <Category name="contacts" component={<Contacts/>}/> */}
                 </div>
             </div>
             <div className='flex w-full h-full'>

@@ -10,7 +10,7 @@ import data from '/src/data.json'
 function Content({text, component, img}){
     return(
         <div className='w-full h-full flex flex-col flex-1 border-r-[1px] border-r-custom-gray'>
-            <div className='hidden md:flex w-full h-[4rem] border-b-[1px] border-b-custom-gray'>
+            <div className='hidden 2xl:flex w-full h-[4rem] border-b-[1px] border-b-custom-gray'>
                 <div className='flex justify-center items-center h-full w-[19rem] border-r-[1px] border-r-custom-gray'>
                     <div className='flex justify-between items-center w-[90%]'>
                         <img src={img} alt=""/>
@@ -20,10 +20,10 @@ function Content({text, component, img}){
                 </div>
             </div>
             <div className='flex flex-1'>
-                <div className='w-full h-full flex justify-center items-center'>
+                <div className='w-full h-full flex justify-center items-start'>
                     {component}
                 </div>
-                <div className='hidden md:flex justify-center  w-[3rem] h-full border-l-[1px] border-l-custom-gray'>
+                <div className='hidden 2xl:flex justify-center  w-[3rem] h-full border-l-[1px] border-l-custom-gray'>
                     <div className='mt-2 w-[2rem] h-[13px] bg-light-gray'></div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ export function PersonalInfoContent() {
   );
 
   return (
-    <div className="flex flex-col md:flex-row w-full h-full justify-start items-center">
+    <div className="flex flex-col 2xl:flex-row w-full h-full justify-start items-center">
       {
         selectedComponents.length > 0 ? (
             selectedComponents.map(({ img, text, component }, index) => (
