@@ -16,47 +16,49 @@ function Writer({Lines, length}){
         }
     }, []);
 
-    return(<>
-        <div className='w-[90%] min-w-[35rem] max-w-[40rem] h-[95%] flex'>
-            <div className="w-[7rem] hidden 2xl:flex items-start justify-between">
-                <div className="flex flex-col items-end">
+    return(
+        <div className='w-[90%] h-[90%] flex justify-start items-center'>
+            <div className='w-[90%] lg:min-w-[35rem] lg:max-w-[60rem] h-[95%] flex'>
+                <div className="w-[7rem] hidden lg:flex items-start justify-between">
+                    <div className="flex flex-col items-end">
+                        {
+                            Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
+                                return (
+                                    <p key={index} className='text-light-gray lg:text-xl 3xl:text-2xl'>
+                                        {number}
+                                    </p>
+                            )})
+                            
+                        }
+                    </div>
+                    <div className="flex flex-col items-center">
+                        {
+                            Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
+                                return (
+                                    <p key={index} className='lg:text-xl 3xl:text-2xl text-light-gray'>
+                                        {
+                                            index === 0 ? '/**' : index === length - 1 ? '*/' : '*'  
+                                        }
+                                    </p>
+                            )})
+                        }
+                    </div>
+                </div>
+                <div className='w-full h-full flex flex-col justify-start items-start  '>
                     {
-                        Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
+                        Lines.map((line, index)=>{
                             return (
-                                <p key={index} className='text-light-gray md:text-2xl'>
-                                    {number}
+                                <p key={index} className='text-light-gray md:text-lg lg:text-xl 3xl:text-2xl  whitespace-pre-wrap'>
+                                    {`${line}`}
                                 </p>
-                        )})
-                        
+                            )
+                        })
                     }
                 </div>
-                <div className="flex flex-col items-center">
-                    {
-                        Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
-                            return (
-                                <p key={index} className='text-light-gray md:text-2xl'>
-                                    {
-                                        index === 0 ? '/**' : index === length - 1 ? '*/' : '*'  
-                                    }
-                                </p>
-                        )})
-                    }
-                </div>
-            </div>
-            <div className='w-full h-full flex flex-col justify-start items-start  '>
-                {
-                    Lines.map((line, index)=>{
-                        return (
-                            <p key={index} className='text-light-gray md:text-lg lg:text-xl 3xl:text-2xl  whitespace-pre-wrap'>
-                                {`${line}`}
-                            </p>
-                        )
-                    })
-                }
-            </div>
 
+            </div>
         </div>
-    </>)
+    )
 }
 
 function MyImg(){
@@ -65,7 +67,7 @@ function MyImg(){
         <div className='w-[90%] h-[90%] relative flex justify-center items-start drop-shadow-[80px_30px_10px_rgba(0,0,0,1)]'>
             <img 
                 className="
-                md:min-w-[35rem]
+                lg:min-w-[35rem]
                 w-[42rem]
                 opacity-80
                 " 
@@ -88,7 +90,32 @@ function Bio() {
     const handleClick = (data) => {
         dispatch(toggleComponent(data));
     };
-  
+
+    const handleResize = () => {
+        if (window.innerWidth <= 1536 && window.innerWidth > 768){
+            dispatch(removeComponent({ text: data.image.name }));
+        }
+        else
+        {
+            if (locationPath) {
+                dispatch(removeComponent({ text: data.image.name }));
+                dispatch(removeComponent({ text: 'about-me.md' }));
+                handleClick({
+                    img: '/assets/img.svg',
+                    text: data.image.name,
+                    component: <MyImg/>
+                });
+                handleClick({
+                    img: '/assets/readmi.svg',
+                    text: 'about-me.md',
+                    component: <Writer Lines={data.bio} length={data.bio.length}/>
+                });
+            }
+        }
+    }
+
+
+
     useEffect(() => {
         if (locationPath) {
             if (data.bio.length > 0) {
@@ -104,22 +131,33 @@ function Bio() {
                     component: <MyImg/>
                 });
             }
+            handleResize();
         }
         else {
             dispatch(removeComponent({ text: 'about-me.md' }));
             dispatch(removeComponent({ text: data.image.name }));
         }
-    }, [data.bio, locationPath]);
-  
+    }, [locationPath]);
+    
+    useEffect(() => {
+        window.addEventListener('resize', handleResize);
+        
+        handleResize();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }
+    , []);
     return (
         <div className="w-[85%] flex flex-col">
-            <div className="flex justify-start items-center">
-            <img src="/assets/readmi.svg" alt="" />
-            <span className="md:text-2xl text-light-gray">about-me.md</span>
+            <div className="flex justify-start items-center ">
+            <img src="/assets/readmi.svg" alt="" className="w-[20px] h-[20px] 2xl:w-auto 2xl:h-auto mr-3"/>
+            <span className="2xl:text-xl 3xl:text-2xl text-light-gray">about-me.md</span>
             </div>
             <div className="flex justify-start items-center">
-            <img src="/assets/img.svg" alt="" />
-            <span className="md:text-2xl text-light-gray">{data.image.name}</span>
+            <img src="/assets/img.svg" alt="" className="w-[20px] h-[20px] 2xl:w-auto 2xl:h-auto mr-3"/>
+            <span className="2xl:text-xl 3xl:text-2xl text-light-gray">{data.image.name}</span>
             </div>
         </div>
     );

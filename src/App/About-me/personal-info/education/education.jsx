@@ -66,8 +66,8 @@ function Education() {
     return (
         <div className="w-[85%] flex flex-col">
             <div className="flex justify-start items-center">
-            <img src="/assets/readmi.svg" alt="" />
-            <span className="text-2xl text-light-gray">education.md</span>
+            <img src="/assets/readmi.svg" alt="" className="w-[20px] h-[20px] 2xl:w-auto 2xl:h-auto mr-3"/>
+            <span className="2xl:text-xl 3xl:text-2xl text-light-gray">education.md</span>
             </div>
         </div>
     );

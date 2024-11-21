@@ -6,9 +6,9 @@ function CustomLink({text, style='', path, onLinkClick}){
     const {pathname} = useLocation()
     const activeButton = path !== '/' ? pathname.startsWith(path) : pathname === path;
     return(
-        <Link className={styles.routerlink + style} to={path}
+        <Link to={path} className={"w-full h-[85px] border-b border-[#1E2D3D] text-white flex items-start cursor-pointer justify-center flex-col relative  md:items-center md:border-r-[1px] md:border-[#1E2D3D] lg:w-[12rem]" + style}
             onClick={onLinkClick}>
-            <p className={`text-2xl  ${activeButton ? "text-white" : "text-light-gray"}`}>{text}</p>
+            <p className={`lg:text-xl 3xl:text-2xl  ${activeButton ? "text-white" : "text-light-gray"}`}>{text}</p>
             <div className={activeButton ? "md:h-[5px] md:w-[100%] bg-sunset-orange absolute bottom-0 " + styles.appear : ''}></div>
         </Link>
     )

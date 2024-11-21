@@ -10,11 +10,11 @@ import data from '/src/data.json'
 function Content({text, component, img}){
     return(
         <div className='w-full h-full flex flex-col flex-1 border-r-[1px] border-r-custom-gray'>
-            <div className='hidden 2xl:flex w-full h-[4rem] border-b-[1px] border-b-custom-gray'>
+            <div className='hidden md:flex w-full h-[4rem] md:border-[1px] 2xl:border-b-[1px] border-custom-gray'>
                 <div className='flex justify-center items-center h-full w-[19rem] border-r-[1px] border-r-custom-gray'>
                     <div className='flex justify-between items-center w-[90%]'>
-                        <img src={img} alt=""/>
-                        <span className='text-2xl text-light-gray'>{text}</span>
+                        <img src={img} alt="" className='w-[20px] h-[20px] 2xl:w-auto 2xl:h-auto'/>
+                        <span className='lg:text-xl 3xl:text-2xl text-light-gray'>{text}</span>
                         <img src="/assets/x.svg" alt=""/>
                     </div>
                 </div>
@@ -31,7 +31,6 @@ function Content({text, component, img}){
     )
 }
 
-// src/app/PersonalInfoContent.jsx
 
 export function PersonalInfoContent() {
   const selectedComponents = useSelector(
@@ -53,8 +52,6 @@ export function PersonalInfoContent() {
   );
 }
 
-{/* <Content img="/assets/Readmi.svg" text='about-me.md' component={<Writer Lines={lines}/>}/>
-<Content img="/assets/img.svg" text='nouakhro.jpeg' component={<MyImg/>}/> */}
 
 function PersonalInfoCategory({text, icon, component}) {
     const [show, setShow] = useState(false)
@@ -65,8 +62,8 @@ function PersonalInfoCategory({text, icon, component}) {
         <div className='flex flex-col w-[85%] mb-[7px]'>
             <Link to={text} className={costumStyle.container + ' h-[40px]'} onClick={clickhandler}>
                 <img className={`mr-4 ${show  ? 'rotate-90' : ''}`} src="/assets/arow.svg" alt="" />
-                <img className="mr-3" src={icon} alt="" />
-                <span className={`md:text-2xl ${show ? "text-white" : "text-steel-blue"}`}>{text}</span>
+                <img className="w-[20px] h-[20px] 2xl:w-auto 2xl:h-auto mr-3" src={icon} alt="" />
+                <span className={`2xl:text-xl 3xl:text-2xl ${show ? "text-white" : "text-steel-blue"}`}>{text}</span>
             </Link>
             <div className={!show ? 'hidden' : 'flex flex justify-end items-center'} >{component}</div>
         </div>
@@ -88,8 +85,8 @@ const DownloadResume = () => {
       onClick={handleDownload}
     >
       <div className="flex justify-start items-center">
-        <img src="/assets/resum.svg" alt="Resume Icon" />
-        <span className="md:text-2xl text-light-gray">my_resume.pdf</span>
+        <img src="/assets/resum.svg" alt="Resume Icon" className='mr-3 w-[20px] h-[20px] 2xl:w-auto 2xl:h-auto' />
+        <span className="2xl:text-xl 3xl:text-2xl  text-light-gray">my_resume.pdf</span>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ function CustomLink({path, img}){
     const isMatching = location.pathname.includes(path)
     return(
         <Link className='h-[5rem] flex justify-center items-center' to={path}>
-            <img className={`${!isMatching ? 'opacity-40' : ''}`} src={img} alt="" />
+            <img className={` ${!isMatching ? 'opacity-40 ' : ''}`} src={img} alt="" />
         </Link>
     )
 }
