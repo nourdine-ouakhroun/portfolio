@@ -19,7 +19,7 @@ function Writer({Lines, length}){
     return(
         <div className='w-[90%] h-[90%] flex justify-start items-center'>
             <div className='w-[90%] lg:min-w-[35rem] lg:max-w-[60rem] h-[95%] flex'>
-                <div className="w-[7rem] hidden lg:flex items-start justify-between">
+                <div className="w-[7rem] hidden 2xl:flex items-start justify-between">
                     <div className="flex flex-col items-end">
                         {
                             Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
@@ -64,11 +64,12 @@ function Writer({Lines, length}){
 function MyImg(){
 
     return(<>
-        <div className='w-[90%] h-[90%] relative flex justify-center items-start drop-shadow-[80px_30px_10px_rgba(0,0,0,1)]'>
+        <div className='w-[90%] h-[90%] relative flex justify-center items-start 2xl:drop-shadow-[40px_0px_20px_rgba(0,0,0,1)]'>
             <img 
                 className="
                 lg:min-w-[35rem]
-                w-[42rem]
+                1xl:w-[42rem]
+                w-[30rem]
                 opacity-80
                 " 
                 src={data.image.src}
@@ -90,32 +91,7 @@ function Bio() {
     const handleClick = (data) => {
         dispatch(toggleComponent(data));
     };
-
-    const handleResize = () => {
-        if (window.innerWidth <= 1536 && window.innerWidth > 768){
-            dispatch(removeComponent({ text: data.image.name }));
-        }
-        else
-        {
-            if (locationPath) {
-                dispatch(removeComponent({ text: data.image.name }));
-                dispatch(removeComponent({ text: 'about-me.md' }));
-                handleClick({
-                    img: '/assets/img.svg',
-                    text: data.image.name,
-                    component: <MyImg/>
-                });
-                handleClick({
-                    img: '/assets/readmi.svg',
-                    text: 'about-me.md',
-                    component: <Writer Lines={data.bio} length={data.bio.length}/>
-                });
-            }
-        }
-    }
-
-
-
+  
     useEffect(() => {
         if (locationPath) {
             if (data.bio.length > 0) {
@@ -137,18 +113,56 @@ function Bio() {
             dispatch(removeComponent({ text: 'about-me.md' }));
             dispatch(removeComponent({ text: data.image.name }));
         }
-    }, [locationPath]);
+    }, [data.bio, locationPath]);
     
+    const handleResize = () => {
+        if (window.innerWidth <= 1536) {
+            dispatch(removeComponent({ text: 'about-me.md' }));
+            dispatch(removeComponent({ text: data.image.name }));
+
+            if (locationPath) {
+                handleClick({
+                    img: '/assets/img.svg',
+                    text: data.image.name,
+                    component: <MyImg/>
+                });
+                const totalLength = data.bio.reduce((sum, line) => sum + line.length, 0);
+                handleClick({
+                    img: '/assets/readmi.svg',
+                    text: 'about-me.md',
+                    component: <Writer Lines={data.bio} length={Math.ceil(totalLength / 25)}/>
+                });
+            }
+        }
+        else {
+            dispatch(removeComponent({ text: 'about-me.md' }));
+            dispatch(removeComponent({ text: data.image.name }));
+
+            if (locationPath) {
+                const totalLength = data.bio.reduce((sum, line) => sum + line.length, 0);
+                handleClick({
+                    img: '/assets/readmi.svg',
+                    text: 'about-me.md',
+                    component: <Writer Lines={data.bio} length={Math.ceil(totalLength / 25)}/>
+                });
+                handleClick({
+                    img: '/assets/img.svg',
+                    text: data.image.name,
+                    component: <MyImg/>
+                });
+            }
+        }
+    }
+
     useEffect(() => {
-        window.addEventListener('resize', handleResize);
-        
+        window.addEventListener('resize', () => handleResize());
+
         handleResize();
 
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', () => handleResize()); 
         }
-    }
-    , []);
+    }, []);            
     return (
         <div className="w-[85%] flex flex-col">
             <div className="flex justify-start items-center ">
