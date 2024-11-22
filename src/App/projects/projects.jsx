@@ -1,40 +1,57 @@
 import Category from "../category/category"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import data from '/src/data.json'
+import { useDispatch, useSelector } from "react-redux";
+import { removeComponent, toggleComponent } from "../../componentsSlice";
 
-const Checkmark = () => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleClick = () => {
-    setIsChecked(!isChecked);
-  };
-
-  return (
-    <div
-      className={`cursor-pointer flex justify-center items-center w-8 h-8 rounded-lg border-2 transition-all duration-200 ${
-        isChecked
-          ? 'bg-steel-blue border-steel-blue'
-          : 'bg-transparent border-steel-blue hover:bg-gray-800 hover:border-gray-400'
-      }`}
-      onClick={handleClick}
-    >
-      {isChecked && (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#FFFFFF"
-          strokeWidth="3"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 12l5 5L19 7" />
-        </svg>
-      )}
-    </div>
-  );
+const Checkmark = ({ text }) => {
+	const [isChecked, setIsChecked] = useState(false);
+	const dispatch = useDispatch();
+	const selectedProjects = useSelector((state) => state.components.selectedProjects);
+	const selectedTechs = useSelector((state) => state.components.selectedTechs);
+	const handleClick = () => {
+		setIsChecked(!isChecked);
+		if (isChecked) {
+			dispatch(removeComponent({ text: text }));
+		}
+		else {
+			dispatch(toggleComponent({ text: text, type: 'projects' }));
+		}
+	};
+	useEffect(() => {
+		if (selectedTechs.includes(text)) {
+			setIsChecked(true);
+		}
+		else {
+			setIsChecked(false);
+		}
+	}, [selectedTechs]);
+	return (
+		<div
+		className={`cursor-pointer flex justify-center items-center w-8 h-8 rounded-lg border-2 transition-all duration-200 ${
+			isChecked
+			? 'bg-steel-blue border-steel-blue'
+			: 'bg-transparent border-steel-blue hover:bg-gray-800 hover:border-gray-400'
+		}`}
+		onClick={handleClick}
+		>
+		{isChecked && (
+			<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width="28"
+			height="28"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="#FFFFFF"
+			strokeWidth="3"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			>
+			<path d="M5 12l5 5L19 7" />
+			</svg>
+		)}
+		</div>
+	);
 };
 
 
@@ -63,7 +80,7 @@ function Languages({text, icon})
 {
     return (
         <div className="w-[40%] h-[3rem] flex justify-between items-center cursor-pointer">
-            <Checkmark/>
+            <Checkmark text={text}/>
             <div className="flex w-[70%] justify-start items-center gap-3">
                 <img src={icon} alt="" className=""/>
                 <spain className="text-white text-2xl">{text}</spain>
@@ -179,18 +196,36 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 
 function ProjectsList()
 {
+	const selectedProjects = useSelector((state) => state.components.selectedProjects);
     return(
 		<div className="[&::-webkit-scrollbar]:hidden w-[95%] h-[90%] flex flex-col items-start  overflow-y-auto gap-5">
 			{
-				data.projects.map((item, index) => (
+				selectedProjects.length === 0 ? data.projects.map((item, index) => (
 					<ProjectsCard 
 						key={index}
 						link={item.link}
 					 	description={item.description}
 						img={item.img} text={item.name}
-						technologies={item.tech}
+						technologies={item.techs}
+						skills={item.skills}/>
+				)) : selectedProjects.map((item, index) => (
+					<ProjectsCard 
+						key={index}
+						link={item.link}
+					 	description={item.description}
+						img={item.img} text={item.name}
+						technologies={item.techs}
 						skills={item.skills}/>
 				))
+				// data.projects.map((item, index) => (
+				// 	<ProjectsCard 
+				// 		key={index}
+				// 		link={item.link}
+				// 	 	description={item.description}
+				// 		img={item.img} text={item.name}
+				// 		technologies={item.techs}
+				// 		skills={item.skills}/>
+				// ))
 			}
 		</div>
     )

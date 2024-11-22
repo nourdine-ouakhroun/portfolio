@@ -25,7 +25,7 @@
         " ",
         "I'm Nourdine Ouakhroun, a passionate software engineering student from Morocco, currently honing my skills at 1337 Coding School, part of the prestigious 42 Network.",
         " ",
-        "I'm a 21-year-old full-stack software engineer with a deep interest in building efficient, scalable, and innovative solutions. My journey in software development has equipped me with a strong foundation in both front-end and back-end technologies, allowing me to create impactful applications.",
+        "I'm a 21-year-old full-stack software engineer with a deep interest in building efficient, scalable, and innovative solutions. My journey in software development has equipped me with a strong foundation in both front-end and back-end techsnologies, allowing me to create impactful applications.",
         " "
     ],
     "projects": [
@@ -38,7 +38,7 @@
             ],
             "img": "/assets/Docker-Logo.png",
             "link": "https:/www.github.com/nourdine-ouakhroun/inception",
-            "tech": ["Docker", "WordPress", "MariaDB", "Nginx", "Shell Scripting"],
+            "techs": ["Docker", "WordPress", "MariaDB", "Nginx", "Shell Scripting"],
             "skills": ["Containerization", "Multi-Service Orchestration", "Scalable Web Environments"]
         },
         {
@@ -50,7 +50,7 @@
             ],
             "img": "/assets/tranc.svg",
             "link": "https:/www.github.com/nourdine-ouakhroun/transcendence",
-            "tech": ["javascript", "Django", "Python", "HTML", "CSS", "WebSocket", "rest api"],
+            "techs": ["JavaScript", "Django", "Python", "HTML", "CSS", "WebSocket", "rest api", "Docker"],
             "skills": ["Full-Stack Development", "Real-Time Features", "Client-Server Integration"]
         },
         {
@@ -62,7 +62,7 @@
             ],
             "img": "/assets/portfolio.png",
             "link": "https:/www.github.com/nourdine-ouakhroun/portfolio",
-            "tech": ["react", "javascript", "HTML", "CSS", "Tailwind"],
+            "techs": ["React", "JavaScript", "HTML", "CSS", "Tailwind"],
             "skills": ["Responsive Design", "User Experience", "Visual Appeal"]
         },
         {
@@ -74,7 +74,7 @@
             ],
             "img": "/assets/nginx.png",
             "link": "https:/www.github.com/nourdine-ouakhroun/webserver",
-            "tech": ["C++"],
+            "techs": ["C++"],
             "skills": ["HTTP Requests", "Socket Programming", "Connection Management", "Server Implementation", "Network Protocols"]
         },
         {
@@ -86,7 +86,7 @@
             ],
             "img": "/assets/Cub3D.webp",
             "link": "https:/www.github.com/nourdine-ouakhroun/cub3d",
-            "tech": ["C"],
+            "techs": ["C"],
             "skills": ["Raycasting", "Graphics Programming", "Optimization", "Algorithmic Thinking"]
         },
         {
@@ -98,7 +98,7 @@
             ],
             "img": "/assets/shell.svg",
             "link": "https:/www.github.com/nourdine-ouakhroun/minishell",
-            "tech": ["C"],
+            "techs": ["C"],
             "skills": ["Shell Implementation", "Command Execution", "Process Management", "Parsing"]
         }
 
@@ -143,23 +143,23 @@
 
     ],
     "education": [
-        "/**",
-        " *",
-        " * EDUCATION JOURNEY",
-        " *",
-        " *     2022 — 2024",
-        " *         Software Engineering at 1337 Coding School, 42 Network",
-        " *         Tétouan, Morocco",
-        " *         Focus: Full-Stack Development, Algorithms, Data Structures",
-        " *         Skills: Project Management, Version Control, Self-learning",
-        " *",
-        " *     2020 — 2023",
-        " *         Licentiate Degree in Economics and Management",
-        " *         Ibn Zohr University, FSJES-CUAM Agadir, Ait Melloul",
-        " *         Specialization: Management",
-        " *         Achievement: Graduated with a focus on leadership and teamwork",
-        " *         Skills: Project Management, Communication, Business Strategy",
-        " */"
+        " ",
+        " ",
+        " EDUCATION JOURNEY",
+        " ",
+        "     2022 — 2024",
+        "         Software Engineering at 1337 Coding School, 42 Network",
+        "         Tétouan, Morocco",
+        "         Focus: Full-Stack Development, Algorithms, Data Structures",
+        "         Skills: Project Management, Version Control, Self-learning",
+        " ",
+        "     2020 — 2023",
+        "         Licentiate Degree in Economics and Management",
+        "         Ibn Zohr University, FSJES-CUAM Agadir, Ait Melloul",
+        "         Specialization: Management",
+        "         Achievement: Graduated with a focus on leadership and teamwork",
+        "         Skills: Project Management, Communication, Business Strategy",
+        " "
     ],
     "image": {
         "name": "nouakhro.jpeg",

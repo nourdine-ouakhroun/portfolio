@@ -48,7 +48,7 @@ function AboutMe(){
                     <Routes>
                         <Route path='personal-info/*' element={<Category name="personal-info" component={<PersonalInfo/>}/>}/>
                     </Routes>
-                    {/* <Category name="contacts" component={<Contacts/>}/> */}
+                    <Category name="contacts" component={<Contacts/>}/>
                 </div>
             </div>
             <div className='flex w-full h-full'>

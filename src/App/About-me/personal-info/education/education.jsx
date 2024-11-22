@@ -1,40 +1,65 @@
 import { useDispatch, useSelector } from "react-redux";
 import { removeComponent, toggleComponent } from "../../../../componentsSlice";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import data from '/src/data.json'
 
 
-  
 function Writer({Lines, length}){
+    const componentRef = useRef(null);
+    const [width, setWidth] = useState(0);
+  
+    useEffect(() => {
+        if (componentRef.current) {
+            const rect = componentRef.current.getBoundingClientRect();
+            setWidth(rect.width);
+            console.log(rect.width);
+        }
+    }, []);
 
-    return(<>
-        <div className='w-[95%] h-[95%] flex'>
-            <div className="w-[4rem]">
-                {
-                    Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
-                        return (
-                            <p key={index} className='text-light-gray text-2xl'>
-                            {number}
-                        </p>
-                    )
-                    })
-                }
-            </div>
-            <div>
-                {
-                    Lines.map((line, index)=>{
-                        return (
-                            <p key={index} className='text-light-gray text-2xl' style={{ whiteSpace: 'pre' }}>
-                                {`${line}`}
-                            </p>
-                        )
-                    })
-                }
-            </div>
+    return(
+        <div className='w-[90%] h-[90%] flex justify-start items-center'>
+            <div className='w-[90%] lg:min-w-[35rem] lg:max-w-[60rem] h-[95%] flex'>
+                <div className="w-[7rem] hidden 2xl:flex items-start justify-between">
+                    <div className="flex flex-col items-end">
+                        {
+                            Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
+                                return (
+                                    <p key={index} className='text-light-gray lg:text-xl 3xl:text-2xl'>
+                                        {number}
+                                    </p>
+                            )})
+                            
+                        }
+                    </div>
+                    <div className="flex flex-col items-center">
+                        {
+                            Array.from({length: length}, (_, i) => i + 1).map((number, index)=>{
+                                return (
+                                    <p key={index} className='lg:text-xl 3xl:text-2xl text-light-gray'>
+                                        {
+                                            index === 0 ? '/**' : index === length - 1 ? '*/' : '*'  
+                                        }
+                                    </p>
+                            )})
+                        }
+                    </div>
+                </div>
+                <div className='w-full h-full flex flex-col justify-start items-start  '>
+                    {
+                        Lines.map((line, index)=>{
+                            return (
+                                <p key={index} className='text-light-gray md:text-lg lg:text-xl 3xl:text-2xl  whitespace-pre-wrap'>
+                                    {`${line}`}
+                                </p>
+                            )
+                        })
+                    }
+                </div>
 
+            </div>
         </div>
-    </>)
+    )
 }
 
 function Education() {
@@ -54,7 +79,7 @@ function Education() {
             handleClick({
                 img: '/assets/readmi.svg',
                 text: 'education.md',
-                component: <Writer Lines={data.education} length={data.education.length}/>
+                component: <Writer Lines={data.education} length={20}/>
             });
         }
         else {
