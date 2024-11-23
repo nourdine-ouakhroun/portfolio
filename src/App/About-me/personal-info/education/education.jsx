@@ -88,7 +88,7 @@ function Writer({education, length}){
 function Education() {
     const dispatch = useDispatch();
     const selectedComponents = useSelector(
-        (state) => state.components.selectedComponents
+      (state) => state.components.selectedComponents
     );
     const location = useLocation();
     const locationPath = location.pathname.endsWith('education');
@@ -99,12 +99,16 @@ function Education() {
   
     useEffect(() => {
         if (locationPath) {
+            console.log("its meeeeeee", location.pathname)
             dispatch(resetComponents());
             handleClick({
                 img: '/assets/readmi.svg',
                 text: 'education.md',
                 component: <Writer education={data.education} length={20}/>
             });
+        }
+        else {
+            dispatch(removeComponent({ text: 'education.md' }));
         }
       }, [locationPath]);
       

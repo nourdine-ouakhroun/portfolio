@@ -79,9 +79,9 @@ function Content(){
 function Languages({text, icon})
 {
     return (
-        <div className="w-[40%] h-[3rem] flex justify-between items-center cursor-pointer">
+        <div className="min-w-[15rem] h-[3rem] w-full flex justify-start items-center cursor-pointer gap-3">
             <Checkmark text={text}/>
-            <div className="flex w-[70%] justify-start items-center gap-3">
+            <div className="flex justify-start items-center gap-3">
                 <img src={icon} alt="" className=""/>
                 <spain className="text-white text-2xl">{text}</spain>
             </div>
@@ -106,13 +106,26 @@ function ProjectsFliter()
 function ProjectsCard({link, description, img, text, technologies, skills})
 {
 	const [isClicked, setIsClicked] = useState(false);
-
+	const [isResized, setIsResized] = useState(false);
 	const handleClick = () => {
 		setIsClicked(!isClicked);
 	}
+	const handleResize = () => {
+		if (window.innerWidth > 768) {
+			setIsResized(true);
+		}
+		else {
+			setIsResized(false);
+		}
+	};
+	useEffect(() => {
+		window.addEventListener('resize', () => {handleResize();});
+		handleResize();
+		return () => window.removeEventListener('resize', () => {handleResize();});
+	}, []);
 	return (
 		<div className="w-full flex flex-col md:flex-row justify-end items-end border border-custom-gray">
-			<div className="min-w-[15rem] flex  flex-col h-full justify-center items-center flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
+			<div className="min-w-[15rem] flex w-full flex-col h-full justify-center items-center flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
 				<div className="md:hidden flex w-full justify-between items-center p-2 ">
 					<div className="flex gap-2 w-full justify-end items-center">
 						{
@@ -139,14 +152,14 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 							</div>
 						</div>
 	
-						<div className="w-full flex justify-between flex-col  gap-5 items-end border-custom-gray">
-							<div className="hidden md:flex w-[98%] flex-col justify-between items-start">
+						<div className="w-full flex justify-between flex-col gap-5 items-end border-custom-gray">
+							<div className="flex w-[98%] flex-col justify-between items-start">
 								<div className="flex flex-col">
 									{
 										description.map((item, index) => (
-											!isClicked && index >= 2 ? null :
+											!isClicked && (!isResized || index >= 2) ? null :
 
-											<div key={index} className="flex items-center gap-2">
+											<div key={index} className="flex items-start gap-2">
 												<span className="text-light-gray text-3xl">•</span>
 												<span className="text-light-gray text-xl break-words">{item}</span>
 											</div>
@@ -156,18 +169,18 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 										isClicked && 
 										<div className="flex gap-2 justify-start items-center">
 											<span className="text-light-gray text-3xl">•</span>
-											<span className="text-light-gray text-xl">Skills: </span>
-											{
-												skills.map((item, index) => (
-													<div key={index} className="flex items-center">
-														<span className="text-light-gray text-xl">{item}</span>
+											<span className="text-light-gray text-xl">Skills: &nbsp;
+												{
+													skills.map((item, index) => (
+														<span className="text-light-gray text-xl">{item}
 														{
 															index !== skills.length - 1 &&
-															<span className="text-light-gray text-xl">,</span>
+															<span className="text-light-gray text-xl">, </span>
 														}
-													</div>
-												))
-											}
+														</span>
+													))
+												}
+											</span>
 										</div>
 									}
 								</div>
@@ -191,7 +204,6 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 }	
 
 
-// "demo": "https:/www.youtube.com/watch?v=3JZDZQ1v8Qw"
 
 
 function ProjectsList()
@@ -217,15 +229,6 @@ function ProjectsList()
 						technologies={item.techs}
 						skills={item.skills}/>
 				))
-				// data.projects.map((item, index) => (
-				// 	<ProjectsCard 
-				// 		key={index}
-				// 		link={item.link}
-				// 	 	description={item.description}
-				// 		img={item.img} text={item.name}
-				// 		technologies={item.techs}
-				// 		skills={item.skills}/>
-				// ))
 			}
 		</div>
     )
@@ -236,7 +239,7 @@ function Projects()
     return (
         <div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr] justify-start items-start flex-col overflow-y-auto relative">
             <div className='flex w-full  absolute md:relative bg-custom-blue'>
-                <div className='w-full '>
+                <div className='w-full'>
                     <Category name="Filter" component={<ProjectsFliter/>}/>
                 </div>
             </div>

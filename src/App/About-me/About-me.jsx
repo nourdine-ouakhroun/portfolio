@@ -20,10 +20,13 @@ function CustomLink({path, img}){
 function AboutMe(){
     const [hasNavigated, setHasNavigated] = useState(false);
     const navigate = useNavigate();
-
+    const location = useLocation();
     useEffect(() => {
         if (!hasNavigated) {
-            navigate('personal-info/bio');
+            if (location.pathname.endsWith('bio')) navigate('personal-info/bio');
+            else if (location.pathname.endsWith('education')) navigate('personal-info/education');
+            else
+                navigate('personal-info/bio');
             setHasNavigated(true);
         }
     }, [hasNavigated, navigate]);

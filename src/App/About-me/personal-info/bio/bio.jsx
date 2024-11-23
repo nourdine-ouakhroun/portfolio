@@ -82,58 +82,64 @@ function MyImg(){
 
 function Bio() {
     const dispatch = useDispatch();
+    const selectedComponents = useSelector(
+      (state) => state.components.selectedComponents
+    );
     const location = useLocation();
     const locationPath = location.pathname.endsWith('bio');
-    const [isChanged, setIsChanged] = useState(false);
-
+  
     const handleClick = (data) => {
         dispatch(toggleComponent(data));
     };
+  
+    useEffect(() => {
+        if (locationPath) {
+            handleResize();
+        }
+        else {
+            dispatch(resetComponents());
+
+        }
+    }, [data.bio, locationPath]);
     
     const handleResize = () => {
         if (locationPath) {
-            if (window.innerWidth <= 1536)
-            {
-                setIsChanged(true); 
-                console.log('there 2');
-            }   
-            else{
-                setIsChanged(false);
-                console.log('here 3 ');
+            console.log("its nooooooooot meeeeeee", location.pathname)
+            if (window.innerWidth <= 1536) {
+            
+                dispatch(resetComponents());
+
+                handleClick({
+                    img: '/assets/img.svg',
+                    text: data.image.name,
+                    component: <MyImg/>
+                });
+                const totalLength = data.bio.reduce((sum, line) => sum + line.length, 0);
+                handleClick({
+                    img: '/assets/readmi.svg',
+                    text: 'about-me.md',
+                    component: <Writer Lines={data.bio} length={Math.ceil(totalLength / 24)}/>
+                });
+            }
+            else {
+                
+                dispatch(resetComponents());
+
+                const totalLength = data.bio.reduce((sum, line) => sum + line.length, 0);
+                handleClick({
+                    img: '/assets/readmi.svg',
+                    text: 'about-me.md',
+                    component: <Writer Lines={data.bio} length={Math.ceil(totalLength / 24)}/>
+                });
+                handleClick({
+                    img: '/assets/img.svg',
+                    text: data.image.name,
+                    component: <MyImg/>
+                });
             }
         }
     }
 
-    useEffect(() => {
-        console.log('here 1');
-        dispatch(resetComponents())
-        if (isChanged) {
-            console.log('here');
-            handleClick({
-                img: '/assets/img.svg',
-                text: data.image.name,
-                component: <MyImg/>
-            });
-            handleClick({
-                img: '/assets/readmi.svg',
-                text: 'about-me.md',
-                component: <Writer Lines={data.bio} length={20}/>
-            });
-        } else {
-            console.log('there');
-            const totalLength = data.bio.reduce((sum, line) => sum + line.length, 0);
-            handleClick({
-                img: '/assets/readmi.svg',
-                text: 'about-me.md',
-                component: <Writer Lines={data.bio} length={20}/>
-            });
-            handleClick({
-                img: '/assets/img.svg',
-                text: data.image.name,
-                component: <MyImg/>
-            });
-        }
-    }, [isChanged]);
     useEffect(() => {
         window.addEventListener('resize', () => handleResize());
 
@@ -142,7 +148,7 @@ function Bio() {
         return () => {
             window.removeEventListener('resize', () => handleResize()); 
         }
-    }, []);            
+    }, [ ]);           
     return (
         <div className="w-[85%] flex flex-col">
             <div className="flex justify-start items-center ">
