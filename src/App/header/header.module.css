@@ -1,0 +1,31 @@
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 700 */
+
+#Header-bar{
+    grid-area: header;
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #1E2D3D;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    grid-area: header;
+    min-width: 14rem
+}
+#header{
+    margin: 1em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header p{
+    color: #607B96;
+}

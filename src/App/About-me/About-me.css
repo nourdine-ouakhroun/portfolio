@@ -1,0 +1,4 @@
+.about-me{
+    grid-area: main;
+    overflow: hidden;
+}
