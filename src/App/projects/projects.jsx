@@ -142,7 +142,9 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 				<div className="w-[95%] flex justify-start items-start">
 					<div className="w-full flex flex-col justify-between items-end">
 						<div className="hidden md:flex w-full justify-between items-center">
-							<span className="text-light-purple text-2xl">{text}</span>
+							<a href={link} target="_blank" rel="noreferrer" className="flex justify-end items-end gap-2">
+								<span className="text-light-purple text-2xl">{text}</span>
+							</a>
 							<div className="flex gap-2">
 								{
 									technologies.map((item, index) => (
