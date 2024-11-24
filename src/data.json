@@ -33,7 +33,7 @@
             "name": "Inception",
             "description": [
                 "A Docker-based project at 42, setting up WordPress, MariaDB, and Nginx.",
-                "Focuses on containerization, multi-service orchestration, and scalable web environments.",
+                "Focuses on containerization, multi-service orchestration, and scalable web environments."
             ],
             "img": "/assets/Docker-Logo.png",
             "link": "https:/www.github.com/nourdine-ouakhroun/inception",
@@ -44,10 +44,10 @@
             "name": "Transcendence",
             "description" : [
                 "A full-stack web app project at 42, combining front-end and back-end skills.",
-                "Focuses on real-time features to enhance client-server integration and dynamic interactions.",
+                "Focuses on real-time features to enhance client-server integration and dynamic interactions."
             ],
             "img": "/assets/tranc.svg",
-            "link": "https:/www.github.com/nourdine-ouakhroun/transcendence",
+            "link": "https://github.com/42-team-projects/ft_transcendence",
             "techs": ["JavaScript", "Django", "Python", "HTML", "CSS", "WebSocket", "rest api", "Docker"],
             "skills": ["Full-Stack Development", "Real-Time Features", "Client-Server Integration"]
         },
@@ -55,7 +55,7 @@
             "name": "Portfolio",
             "description": [
                 "A personal project to showcase my skills and projects.",
-                "Focuses on responsive design, user experience, and visual appeal.",
+                "Focuses on responsive design, user experience, and visual appeal."
             ],
             "img": "/assets/portfolio.png",
             "link": "https:/www.github.com/nourdine-ouakhroun/portfolio",
@@ -66,10 +66,10 @@
             "name": "WebServer",
             "description": [
                 "Build a basic HTTP server from scratch using C++.",
-                "Handle HTTP requests, manage c onnections, and implement socket programming.",
+                "Handle HTTP requests, manage c onnections, and implement socket programming."
             ],
             "img": "/assets/nginx.png",
-            "link": "https:/www.github.com/nourdine-ouakhroun/webserver",
+            "link": "https://github.com/nourdine-ouakhroun/webserv",
             "techs": ["C++"],
             "skills": ["HTTP Requests", "Socket Programming", "Connection Management", "Server Implementation", "Network Protocols"]
         },
@@ -88,10 +88,10 @@
             "name": "Minishell",
             "description": [
                 "A 42 project that involves building a basic shell using C.",
-                "Focuses on parsing, executing commands, and managing processes.",
+                "Focuses on parsing, executing commands, and managing processes."
             ],
             "img": "/assets/shell.svg",
-            "link": "https:/www.github.com/nourdine-ouakhroun/minishell",
+            "link": "https:/www.github.com/nourdine-ouakhroun/42-minishell",
             "techs": ["C"],
             "skills": ["Shell Implementation", "Command Execution", "Process Management", "Parsing"]
         }
