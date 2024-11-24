@@ -29,6 +29,12 @@ function AboutMe(){
                 navigate('personal-info/bio');
             setHasNavigated(true);
         }
+        else {
+            if (location.pathname.endsWith('bio')) navigate('personal-info/bio');
+            else if (location.pathname.endsWith('education')) navigate('personal-info/education');
+            else
+                navigate('personal-info/bio');
+        }   
     }, [hasNavigated, navigate]);
 
     return(
