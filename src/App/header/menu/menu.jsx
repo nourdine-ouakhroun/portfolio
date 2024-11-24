@@ -8,7 +8,7 @@ function CustomLink({text, style='', path, onLinkClick}){
     return(
         <Link to={path} className={"w-full h-[85px] border-b border-[#1E2D3D] text-white flex items-start cursor-pointer justify-center flex-col relative  md:items-center md:border-r-[1px] md:border-[#1E2D3D] lg:w-[12rem]" + style}
             onClick={onLinkClick}>
-            <p className={`lg:text-xl 3xl:text-2xl  ${activeButton ? "text-white" : "text-light-gray"}`}>{text}</p>
+            <p className={`ml-3 md:ml-0 lg:text-xl 3xl:text-2xl  ${activeButton ? "text-white" : "text-light-gray"}`}>{text}</p>
             <div className={activeButton ? "md:h-[5px] md:w-[100%] bg-sunset-orange absolute bottom-0 " + styles.appear : ''}></div>
         </Link>
     )
