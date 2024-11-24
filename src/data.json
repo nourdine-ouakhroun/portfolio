@@ -36,7 +36,7 @@
                 "Focuses on containerization, multi-service orchestration, and scalable web environments."
             ],
             "img": "/assets/Docker-Logo.png",
-            "link": "https:/www.github.com/nourdine-ouakhroun/inception",
+            "link": "https://www.github.com/nourdine-ouakhroun/inception",
             "techs": ["Docker", "WordPress", "MariaDB", "Nginx", "Shell Scripting"],
             "skills": ["Containerization", "Multi-Service Orchestration", "Scalable Web Environments"]
         },
@@ -58,7 +58,7 @@
                 "Focuses on responsive design, user experience, and visual appeal."
             ],
             "img": "/assets/portfolio.png",
-            "link": "https:/www.github.com/nourdine-ouakhroun/portfolio",
+            "link": "https://www.github.com/nourdine-ouakhroun/portfolio",
             "techs": ["React", "JavaScript", "HTML", "CSS", "Tailwind"],
             "skills": ["Responsive Design", "User Experience", "Visual Appeal"]
         },
@@ -80,7 +80,7 @@
                 "Focuses on graphics programming, optimization, and algorithmic thinking."
             ],
             "img": "/assets/Cub3D.webp",
-            "link": "https:/www.github.com/nourdine-ouakhroun/cub3d",
+            "link": "https://www.github.com/nourdine-ouakhroun/cub3d",
             "techs": ["C"],
             "skills": ["Raycasting", "Graphics Programming", "Optimization", "Algorithmic Thinking"]
         },
@@ -91,7 +91,7 @@
                 "Focuses on parsing, executing commands, and managing processes."
             ],
             "img": "/assets/shell.svg",
-            "link": "https:/www.github.com/nourdine-ouakhroun/42-minishell",
+            "link": "https://www.github.com/nourdine-ouakhroun/42-minishell",
             "techs": ["C"],
             "skills": ["Shell Implementation", "Command Execution", "Process Management", "Parsing"]
         }
