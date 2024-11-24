@@ -73,10 +73,11 @@ function PersonalInfoCategory({text, icon, component}) {
 
 const DownloadResume = () => {
   const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = data.resume;
-    link.download = 'Nourdine_Ouakhroun_cv.pdf';
-    link.click();
+    // const link = document.createElement('a');
+    // link.href = data.resume;
+    // link.download = 'Nourdine_Ouakhroun_cv.pdf';
+    // link.click();
+    window.open(data.resume, '_blank');
   };
 
   return (
