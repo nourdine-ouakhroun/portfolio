@@ -8,7 +8,7 @@ import emailjs from "@emailjs/browser";
 
 
 const ContactForm = () => {
-const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+const [formData, setFormData] = useState({ from_name: "", email_id: "", message: "" });
 const [isSubmitted, setIsSubmitted] = useState(false);
 
 const handleChange = (e) => {
@@ -30,7 +30,7 @@ const handleSubmit = (e) => {
 		console.log("Email sent successfully:", result.text);
 		setIsSubmitted(true);
 		setTimeout(() => setIsSubmitted(false), 2000);
-		setFormData({ name: "", email: "", message: "" });
+		setFormData({ from_name: "", email_id: "", message: "" });
 		},
 		(error) => {
 		console.error("Error sending email:", error.text);
@@ -58,8 +58,8 @@ return (
 		<span className="block md:text-xl mb-1">_name:</span>
 		<input
 			type="text"
-			name="name"
-			value={formData.name}
+			name="from_name"
+			value={formData.from_name}
 			onChange={handleChange}
 			placeholder="Your Name"
 			className="w-full h-[4rem] px-4 py-2 bg-dark-blue border border-custom-gray rounded-xl focus:outline-none focus:border-primary"
@@ -69,9 +69,9 @@ return (
 		<label className="block mb-4 grid gap-2">
 		<span className="block md:text-xl mb-1">_email:</span>
 		<input
-			type="email"
-			name="email"
-			value={formData.email}
+			type="email_id"
+			name="email_id"
+			value={formData.email_id}
 			onChange={handleChange}
 			placeholder="Your Email"
 			className="w-full h-[4rem] px-4 py-2 bg-dark-blue border border-custom-gray rounded-xl focus:outline-none focus:border-primary"
