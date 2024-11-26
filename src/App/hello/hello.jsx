@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './hello.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { eatFood, resetFood } from '../../componentsSlice';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 const KeyBoard = ()=>{
 	return(
 		<div className='flex justify-center items-center rounded-xl bg-[rgba(0,0,0,0.15)] w-full h-[12rem]'>
@@ -79,10 +79,14 @@ const FoodContainer = () => {
 }
 
 const Skip = () => {
+	const navigate = useNavigate();
+	const handleSkip = () => {
+		navigate('/about-me');
+	}
 	return (
 		<div className='w-full h-[30%] flex justify-end items-end'>
 			<div className='flex justify-center items-center w-[75px] h-[50px] border-[1px] border-white rounded-xl'>
-				<span className=''>Skip</span>
+				<span onClick={handleSkip} className='text-white text-md 2xl:text-xl cursor-pointer'>skip</span>
 			</div>
 		</div>
 	)
@@ -134,7 +138,8 @@ const SnakeGame = () => {
 	newSnake.unshift(head);
 
 	// Check for collisions with food
-	if (head.x >= food.x && head.x < food.x + gridSize* 1.2 && head.y >= food.y && head.y < food.y + gridSize* 1.2) {
+	console.log("head", head, "food", food);
+	if (head.x < food.x + gridSize && head.x + gridSize > food.x && head.y < food.y + gridSize && head.y + gridSize > food.y) {
 		setScore(score + 1);
 		disapatch(eatFood());
 		setFood({
@@ -265,6 +270,7 @@ const SnakeGame = () => {
 		}
 		if (gameOver) return;
 		if (!isMoving) {
+			drawCanvas();
 			disapatch(resetFood());
 		}
 		const gameInterval = setInterval(() => {
