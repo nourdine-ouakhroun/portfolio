@@ -113,7 +113,6 @@ const SnakeGame = () => {
 	const [food, setFood] = useState({ x: 450, y: 455 });
 	const [direction, setDirection] = useState("UP");
 	const [isMoving, setIsMoving] = useState(false);
-
 	const moveSnake = () => {
 	const newSnake = [...snake];
 	const head = { ...newSnake[0] };
@@ -138,7 +137,6 @@ const SnakeGame = () => {
 	newSnake.unshift(head);
 
 	// Check for collisions with food
-	console.log("head", head, "food", food);
 	if (head.x < food.x + gridSize && head.x + gridSize > food.x && head.y < food.y + gridSize && head.y + gridSize > food.y) {
 		setScore(score + 1);
 		disapatch(eatFood());
