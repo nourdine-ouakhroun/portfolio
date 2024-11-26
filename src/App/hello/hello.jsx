@@ -99,7 +99,7 @@ const SnakeGame = () => {
 	const gridSize = 15;
 	const totalWidth = canvasSizeX / gridSize;
 	const totalHeight = canvasSizeY / gridSize;
-
+	const eatfood = useSelector((state) => state.components.snakeFood);
 	const [snake, setSnake] = useState(
 		Array.from({ length: 50 }, (_, index) => ({
 			x: 300,
@@ -257,7 +257,12 @@ const SnakeGame = () => {
 		}
 	};
 
+	const [youWon, setYouWon] = useState(false);
 	useEffect(() => {
+		if (eatfood >= 10) {
+			setYouWon(true);
+			setIsMoving(false);
+		}
 		if (gameOver) return;
 		if (!isMoving) {
 			disapatch(resetFood());
@@ -302,10 +307,16 @@ const SnakeGame = () => {
 		/>
 		<div className="absolute bottom-0 right-0 w-full h-[50%] flex flex-col justify-evenly items-center">
 			{
-				gameOver && (
+				gameOver ? (
 					<div className="w-[98%] h-[3rem] 2xl:h-[4rem] bg-custom-gray bg-opacity-70 flex flex-col items-center justify-center rounded-lg">
 						<p className="text-light-green text-lg 2xl:text-2xl">Game Over!</p>
 					</div>
+				): youWon ? (
+					<div className="w-[98%] h-[3rem] 2xl:h-[4rem] bg-custom-gray bg-opacity-70 flex flex-col items-center justify-center rounded-lg">
+						<p className="text-light-green text-lg 2xl:text-2xl">You Won!</p>
+					</div>
+				): (
+					<></>
 				)
 			}
 			<button onClick={gameOver ? ()=>resetGame() : !isMoving ? () => setIsMoving((prev) => !prev) : ``} className={!gameOver && isMoving ? "hidden" : gameOver ? "text-sm 2xl:text-lg  px-4 text-light-gray rounded-lg transparent bg-transparent border-0" : "absolute text-sm 2xl:text-lg  px-4 bg-sunset-orange text-black rounded-lg"}>
