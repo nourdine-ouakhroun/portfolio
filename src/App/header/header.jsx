@@ -33,9 +33,9 @@ function HeaderBar(){
 
 	return(
 		<>
-			<header className='md:border-r-[1px] border-r-custom-gray 3xl:min-w-[20rem] 2xl:min-w-[17rem] min-w-[17rem]'>
+			<header className='md:border-r-[1px] border-r-custom-gray min-w-[17rem]'>
 				<div id={styles.header}>
-					<p className='lg:text-xl 3xl:text-2xl text-light-gray'>{user.name}</p>
+					<p className='lg:text-lg 3xl:text-xl text-light-gray'>{user.name}</p>
 					<img
 						className='md:hidden'
 						src= {show ? '/assets/list.svg' : '/assets/close_list.svg'}

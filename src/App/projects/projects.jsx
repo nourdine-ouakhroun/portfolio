@@ -36,10 +36,8 @@ const Checkmark = ({ text }) => {
 		onClick={handleClick}
 		>
 		{isChecked && (
-			<svg
+			<svg className="w-4 h-4"
 			xmlns="http://www.w3.org/2000/svg"
-			width="28"
-			height="28"
 			viewBox="0 0 24 24"
 			fill="none"
 			stroke="#FFFFFF"
@@ -62,7 +60,7 @@ function Content(){
 				<div className='hidden md:flex  w-full border-b-[1px] border-b-custom-gray'>
 					<div className='flex justify-center items-center h-full w-[19rem] border-r-[1px] border-r-custom-gray'>
 						<div className='h-[4rem] flex justify-between items-center w-[90%]'>
-								<span className='text-2xl text-light-gray '>
+								<span className='text-sm 2xl:text-2xl text-light-gray '>
 									Projects
 								</span>
 							<img src="/assets/x.svg" alt=""/>
@@ -82,8 +80,8 @@ function Languages({text, icon})
         <div className="min-w-[15rem] h-[3rem] w-full flex justify-start items-center cursor-pointer gap-3">
             <Checkmark text={text}/>
             <div className="flex justify-start items-center gap-3">
-                <img src={icon} alt="" className=""/>
-                <spain className="text-white text-2xl">{text}</spain>
+                <img src={icon} alt="" className="w-[25px] h-[25px] 2xl:w-auto 2xl:h-auto" />
+                <spain className="text-white text-lg 2xl:text-2xl">{text}</spain>
             </div>
         </div>
     )
@@ -130,7 +128,7 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 					<div className="flex gap-2 w-full justify-end items-center">
 						{
 							technologies.map((item, index) => (
-								<img key={index} src={"/assets/" + item + ".svg"} alt="" className="" />
+								<img key={index} src={"/assets/" + item + ".svg"} alt=""/>
 							))
 						}
 					</div>
@@ -143,12 +141,12 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 					<div className="w-full flex flex-col justify-between items-end">
 						<div className="hidden md:flex w-full justify-between items-center">
 							<a href={link} target="_blank" rel="noreferrer" className="flex justify-end items-end gap-2">
-								<span className="text-light-purple text-2xl">{text}</span>
+								<span className="text-light-purple text-xl 2xl:text-2xl">{text}</span>
 							</a>
 							<div className="flex gap-2">
 								{
 									technologies.map((item, index) => (
-										<img key={index} src={"/assets/" + item + ".svg"} alt="" className="" />
+										<img key={index} src={"/assets/" + item + ".svg"} alt=""  className="w-[20px] h-[20px] 2xl:w-auto 2xl:h-auto" />
 									))
 								}
 							</div>
@@ -162,22 +160,22 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 											!isClicked && (!isResized || index >= 2) ? null :
 
 											<div key={index} className="flex items-start gap-2">
-												<span className="text-light-gray text-3xl">•</span>
-												<span className="text-light-gray text-xl break-words">{item}</span>
+												<span className="text-light-gray text-2xl 2xl:text-3xl">•</span>
+												<span className="text-light-gray text-sm 2xl:text-2xl break-words">{item}</span>
 											</div>
 										))
 									}
 									{
 										isClicked && 
-										<div className="flex gap-2 justify-start items-center">
-											<span className="text-light-gray text-3xl">•</span>
-											<span className="text-light-gray text-xl">Skills: &nbsp;
+										<div className="flex gap-2 justify-start items-start">
+											<span className="text-light-gray text-2xl 2xl:text-3xl">•</span>
+											<span className="text-light-gray text-sm 2xl:text-2xl">Skills: &nbsp;
 												{
 													skills.map((item, index) => (
-														<span className="text-light-gray text-xl">{item}
+														<span className="text-light-gray text-sm 2xl:text-2xl">{item}
 														{
 															index !== skills.length - 1 &&
-															<span className="text-light-gray text-xl">, </span>
+															<span className="text-light-gray text-sm 2xl:text-2xl">, </span>
 														}
 														</span>
 													))
@@ -189,7 +187,7 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 							</div>
 							<div className="w-full mb-5 flex justify-between items-center">
 								<div className="flex justify-start items-center">
-									<button className="w-[10rem] bg-custom-gray rounded-lg" onClick={handleClick}>{
+									<button className="text-sm 2xl:text-xl md:w-[7rem] 2xl:w-[10rem] bg-custom-gray rounded-lg" onClick={handleClick}>{
 										isClicked ? "View Less" : "View More"
 									}</button>
 								</div>

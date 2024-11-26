@@ -5,6 +5,7 @@ const initialState = {
   selectedComponents: [],
   selectedProjects: [],
   selectedTechs: [],
+  snakeFood: 0,
 };
 
 const componentsSlice = createSlice({
@@ -49,8 +50,14 @@ const componentsSlice = createSlice({
 				(item) => item.text !== text
 			);
 		},
+		eatFood: (state) => {
+			state.snakeFood++;
+		},
+		resetFood: (state) => {
+			state.snakeFood = 0;
+		},
 	},
 });
 
-export const { toggleComponent, removeComponent, resetComponents} = componentsSlice.actions;
+export const { toggleComponent, removeComponent, resetComponents, eatFood, resetFood} = componentsSlice.actions;
 export default componentsSlice.reducer;

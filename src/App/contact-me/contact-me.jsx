@@ -52,9 +52,9 @@ return (
 		}
 	<form
 		onSubmit={handleSubmit}
-		className="w-[20rem] md:w-[30rem] text-light-gray grid gap-5"
+		className="w-[20rem] md:w-[30rem] text-light-gray grid 2xl:gap-5"
 	>
-		<label className="block mb-4 grid gap-2">
+		<label className="block mb-4 grid 2xl:gap-2">
 		<span className="block md:text-xl mb-1">_name:</span>
 		<input
 			type="text"
@@ -148,7 +148,7 @@ function ContactMe() {
 return (
 	<div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr]  justify-start items-start flex-col overflow-y-auto">
 		<div className='flex w-full  md:border-r-[1px] border-r-custom-gray'>
-			<div className='w-full  md:border-r-[1px] border-r-custom-gray'>
+			<div className='w-full  md:border-r-[1px] border-r-custom-gray min-w-[17rem]'>
 				<Category name="contacts" component={<Contacts/>}/>
 				<Category name="Find-me-on" component={<SocialMedia/>}/>
 			</div>

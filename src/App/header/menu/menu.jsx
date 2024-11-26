@@ -6,9 +6,9 @@ function CustomLink({text, style='', path, onLinkClick}){
     const {pathname} = useLocation()
     const activeButton = path !== '/' ? pathname.startsWith(path) : pathname === path;
     return(
-        <Link to={path} className={"w-full h-[85px] border-b border-[#1E2D3D] text-white flex items-start cursor-pointer justify-center flex-col relative  md:items-center md:border-r-[1px] md:border-[#1E2D3D] lg:w-[12rem]" + style}
+        <Link to={path} className={"w-full h-[75px] md:h-[60px] 2xl:h-[80px] border-b border-[#1E2D3D] text-white flex items-start cursor-pointer justify-center flex-col relative  md:items-center md:border-r-[1px] md:border-[#1E2D3D] lg:w-[10rem]" + style}
             onClick={onLinkClick}>
-            <p className={`ml-3 md:ml-0 lg:text-xl 3xl:text-2xl  ${activeButton ? "text-white" : "text-light-gray"}`}>{text}</p>
+            <p className={`ml-3 md:ml-0 lg:text-md 3xl:text-lg  ${activeButton ? "text-white" : "text-light-gray"}`}>{text}</p>
             <div className={activeButton ? "md:h-[5px] md:w-[100%] bg-sunset-orange absolute bottom-0 " + styles.appear : ''}></div>
         </Link>
     )
@@ -25,7 +25,7 @@ function Menu({isOpen, onLinkClick}){
             <CustomLink
                 onLinkClick={onLinkClick}
                 text='_contact-me'
-                style={" md:w-[15rem] xl:w-[15rem] md:border-r-[0] md:border-l-[1px] border-l-custom-gray"}
+                style={" md:w-[13rem] xl:w-[13rem] md:border-r-[0] md:border-l-[1px] border-l-custom-gray"}
                 path='/contact-me'/>
         </nav>
     )
