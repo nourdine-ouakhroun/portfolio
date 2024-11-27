@@ -276,7 +276,7 @@ const SnakeGame = () => {
 			moveSnake();
 			drawCanvas();
 			}
-		}, 30);
+		}, 50);
 
 		window.addEventListener("keydown", handleKeyDown);
 
