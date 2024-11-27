@@ -110,7 +110,7 @@ const SnakeGame = () => {
 			y: 400 + index * gridSize,
 		}))	
 	);
-	const [food, setFood] = useState({ x: 450, y: 455 });
+	const [food, setFood] = useState({ x: 200, y: 455 });
 	const [direction, setDirection] = useState("UP");
 	const [isMoving, setIsMoving] = useState(false);
 	const moveSnake = () => {
