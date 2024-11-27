@@ -362,9 +362,9 @@ function Hello() {
 			<div className='flex flex-1 justify-center 2xl:justify-end items-center 2xl:items-end'>
 				<div className='flex flex-col gap-20'>
 					<div className="flex flex-col gap-3">
-						<p className='md:text-lg 2xl:text-2xl 3xl:text-3xl'>Hello, World! I am</p>
-						<p className='2xl:text-6xl 3xl:text-7xl md:text-5xl' >Nourdine Ouakhroun</p>
-						<p className='2xl:text-4xl 3xl:text-5xl md:text-3xl text-light-green 2xl:text-purple'> {'>'} Full Stack Developer</p>
+						<p className='text-xl md:text-lg 2xl:text-2xl 3xl:text-3xl'>Hello, World! I am</p>
+						<p className='text-6xl 2xl:text-6xl 3xl:text-7xl md:text-5xl' >Nourdine Ouakhroun</p>
+						<p className='text-xl 2xl:text-4xl 3xl:text-5xl md:text-3xl text-light-green 2xl:text-purple'> {'>'} Full Stack Developer</p>
 					</div>
 					<p className='gap-3 flex flex-col'>
 						<span className='md:text-lg 2xl:text-2xl text-light-gray'>
