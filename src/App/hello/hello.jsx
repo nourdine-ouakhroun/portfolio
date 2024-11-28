@@ -297,6 +297,7 @@ const SnakeGame = () => {
 		setDirection("UP");
 		setIsMoving(false);
 		setGameOver(false);
+		setYouWon(false);
 		setScore(0);
 		disapatch(resetFood());
 	}
@@ -323,14 +324,14 @@ const SnakeGame = () => {
 					<></>
 				)
 			}
-			<button onClick={gameOver ? ()=>resetGame() : !isMoving ? () => setIsMoving((prev) => !prev) : ``} className={!gameOver && isMoving ? "hidden" : gameOver ? "text-sm 2xl:text-lg  px-4 text-light-gray rounded-lg transparent bg-transparent border-0" : "absolute text-sm 2xl:text-lg  px-4 bg-sunset-orange text-black rounded-lg"}>
+			<button onClick={gameOver || youWon ? resetGame : () => setIsMoving((prev) => !prev)} className={(!gameOver || youWon) && isMoving ? "hidden" : gameOver || youWon ? "text-sm 2xl:text-lg  px-4 text-light-gray rounded-lg transparent bg-transparent border-0" : "absolute text-sm 2xl:text-lg  px-4 bg-sunset-orange text-black rounded-lg"}>
 			{gameOver ? "start-agin" : "start-game"}
 			</button>
 		</div>
 	</div>
 	);
 };
-  
+// gameOver ? ()=>resetGame() : !isMoving ? () => setIsMoving((prev) => !prev) : ``} className={!gameOver && isMoving ? "hidden" : gameOver ? "text-sm 2xl:text-lg  px-4 text-light-gray rounded-lg transparent bg-transparent border-0" : "absolute text-sm 2xl:text-lg  px-4 bg-sunset-orange text-black rounded-lg"
 
 const GameContainer = () => {
 
