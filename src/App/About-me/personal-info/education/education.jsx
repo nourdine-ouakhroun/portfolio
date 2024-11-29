@@ -18,7 +18,7 @@ function Writer({education, length}){
     }, []);
 
     return(
-        <div className='ml-10 w-full h-[90%] flex justify-start items-center xl:text-xl 3xl:text-3xl '>
+        <div className='ml-10 w-full h-[90%] flex justify-start items-center xl:text-xl 3xl:text-2xl '>
             <div className='w-full h-[95%] flex'>
                 <div className="w-[7rem] hidden 2xl:flex items-start justify-between">
                     <div className="flex flex-col items-end">
