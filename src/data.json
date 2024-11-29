@@ -66,7 +66,7 @@
             "name": "WebServer",
             "description": [
                 "Build a basic HTTP server from scratch using C++.",
-                "Handle HTTP requests, manage c onnections, and implement socket programming."
+                "Handle HTTP requests, manage connections, and implement socket programming."
             ],
             "img": "/assets/nginx.png",
             "link": "https://github.com/nourdine-ouakhroun/webserv",
