@@ -44,7 +44,6 @@ return (
 			isSubmitted ? (
 				<div className="absolute z-50 top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center">
 					<div className="w-[30rem] h-[15rem] bg-dark-blue flex items-center justify-center flex-col gap-5">
-						{/* <img src="/assets/check.svg" alt="" className="w-[50px] h-[50px]"/> */}
 						<span className="2xl:text-xl 3xl:text-2xl  text-light-gray">Message Sent Successfully</span>
 					</div>
 				</div>
@@ -131,7 +130,7 @@ function SocialMedia() {
 		<div className="mt-5 w-[90%] h-full flex flex-col justify-center items-start gap-5">
 			{
 				Array.from(data.contact.socials).map((link, index) => (
-					<a key={index} href={link.link} className="flex items-center gap-5">
+					<a key={index} href={link.link} className="flex items-center gap-5" target="_blank" rel="noreferrer">
 						<img src="/assets/to.svg" alt="" className="w-[20px] h-[20px] 2xl:w-auto 2xl:h-auto"/>
 						<div className="flex items-center gap-2">
 							<img src={link.icon} alt="" className="w-[30px] h-[30px] 2xl:w-auto 2xl:h-auto"/>

@@ -6,7 +6,8 @@ import { useSelector } from 'react-redux'
 import { Link, Route, Routes, useLocation, useNavigate } from 'react-router-dom'
 import Education from './education/education.jsx'
 import data from '/src/data.json'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 function Content({text, component, img}){
     return(
         <div className='w-full h-full flex flex-col flex-1 border-r-[1px] border-r-custom-gray'>
@@ -69,28 +70,23 @@ function PersonalInfoCategory({text, icon, component}) {
         </div>
     )
 }
-{/*"resume" : "/Nourdine_Ouakhroun_cv.pdf",*/}
 
 const DownloadResume = () => {
-  const handleDownload = () => {
-    // const link = document.createElement('a');
-    // link.href = data.resume;
-    // link.download = 'Nourdine_Ouakhroun_cv.pdf';
-    // link.click();
-    window.open(data.resume, '_blank');
-  };
+	const handleDownload = () => {
+		window.open(data.resume, '_blank');
+	};
 
-  return (
-    <div
-      className=" mb-[7px] w-[90%] flex flex-col cursor-pointer"
-      onClick={handleDownload}
-    >
-      <div className="flex justify-start items-center">
-        <img src="/assets/resum.svg" alt="Resume Icon" className='mr-3 w-[20px] h-[20px] 2xl:w-auto 2xl:h-auto' />
-        <span className="2xl:text-xl 3xl:text-2xl  text-light-gray">my_resume.pdf</span>
-      </div>
-    </div>
-  );
+	return (
+		<div
+		className=" mb-[7px] w-[90%] flex flex-col cursor-pointer"
+		onClick={handleDownload}
+		>
+		<div className="flex justify-start items-center w-full h-[50px]">
+			<FontAwesomeIcon icon={faFilePdf} className="text-steel-blue 2xl:text-2xl 3xl:text-3xl mr-3 ml-2" />
+			<span className="2xl:text-xl 3xl:text-2xl  text-light-gray">my_resume.pdf</span>
+		</div>
+		</div>
+	);
 };
 
 

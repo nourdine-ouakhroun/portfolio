@@ -357,6 +357,41 @@ const GameContainer = () => {
 };
 
 
+
+const TypingEffect = ({ text }) => {
+	const [currentText, setCurrentText] = useState("");
+	const [index, setIndex] = useState(0);
+	const [showCursor, setShowCursor] = useState(true);
+  
+	useEffect(() => {
+	  if (index < text.length) {
+		const timeout = setTimeout(() => {
+		  setCurrentText((prev) => prev + text[index]);
+		  setIndex((prev) => prev + 1);
+		}, 100);
+  
+		return () => clearTimeout(timeout);
+	  }
+	}, [index, text]);
+  
+	// Toggle cursor visibility
+	useEffect(() => {
+	  const cursorInterval = setInterval(() => {
+		setShowCursor((prev) => !prev);
+	  }, 500); // Cursor blinks every 500ms
+  
+	  return () => clearInterval(cursorInterval);
+	}, []);
+  
+	return (
+	  <div style={{ display: "inline-flex", alignItems: "center" }}>
+		<span>{currentText}</span>
+		{showCursor && <span style={{ marginLeft: "2px", borderLeft: "2px solid", height: "1em" }}></span>}
+	  </div>
+	);
+  };
+
+
 function Hello() {
 	return (
 		<div className='w-[90%] h-full flex justify-center items-center 2xl:gap-20 3xl:gap-28 relative'>
@@ -365,7 +400,9 @@ function Hello() {
 					<div className="flex flex-col gap-3">
 						<p className='text-xl md:text-lg 2xl:text-2xl 3xl:text-3xl'>Hello, World! I am</p>
 						<p className='text-6xl 2xl:text-6xl 3xl:text-7xl md:text-5xl' >Nourdine Ouakhroun</p>
-						<p className='text-xl 2xl:text-4xl 3xl:text-5xl md:text-3xl text-light-green 2xl:text-purple'> {'>'} Full Stack Developer</p>
+						<p className="text-xl 2xl:text-4xl 3xl:text-5xl md:text-3xl text-light-green 2xl:text-purple">
+						{'>'} <TypingEffect text="Full Stack Developer" />
+						</p>
 					</div>
 					<p className='gap-3 flex flex-col'>
 						<span className='md:text-lg 2xl:text-2xl text-light-gray'>
