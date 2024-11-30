@@ -338,7 +338,7 @@ const GameContainer = () => {
 
     return (
 		<div className='hidden lg:flex h-full flex-1 items-center'>
-			<div className='bg-gradient-to-br from-dark-green  border-t-[1px] border-t-light-gray rounded-xl w-[32rem] h-[30rem]  xl:w-[40rem] xl:h-[38rem]  2xl:w-[44rem] 2xl:h-[42rem] flex flex-col items-center justify-center shadow-black shadow-sm'>
+			<div className='bg-gradient-to-br from-dark-green  border-t-[1px] border-t-light-gray rounded-xl w-[32rem] h-[30rem] 2xl:w-[44rem] 2xl:h-[42rem] flex flex-col items-center justify-center shadow-black shadow-sm'>
 				<div className='flex w-[90%] h-[90%]'>
 					<div className='flex flex-1 w-full h-full bg-custom-blue rounded-xl'>
 						<SnakeGame/>
