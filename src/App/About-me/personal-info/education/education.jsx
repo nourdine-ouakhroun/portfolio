@@ -13,7 +13,6 @@ function Writer({education, length}){
         if (componentRef.current) {
             const rect = componentRef.current.getBoundingClientRect();
             setWidth(rect.width);
-            console.log(rect.width);
         }
     }, []);
 
@@ -99,7 +98,6 @@ function Education() {
   
     useEffect(() => {
         if (locationPath) {
-            console.log("its meeeeeee", location.pathname)
             dispatch(resetComponents());
             handleClick({
                 img: '/assets/readmi.svg',

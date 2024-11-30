@@ -14,7 +14,6 @@ const componentsSlice = createSlice({
 	reducers: {
 		resetComponents: (state) => {
 			state.selectedComponents = [];
-			console.log('reset');
 		},
 		toggleComponent: (state, action) => {
 			const { payload } = action;
@@ -25,7 +24,6 @@ const componentsSlice = createSlice({
 						!state.selectedProjects.some((item) => item.name === project.name)
 				);
 				state.selectedProjects.push(...filteredProjects);
-				console.log(state.selectedProjects.length);
 				state.selectedTechs.push(payload.text);
 			}
 			else {

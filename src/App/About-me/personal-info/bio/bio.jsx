@@ -12,7 +12,6 @@ function Writer({Lines, length}){
         if (componentRef.current) {
             const rect = componentRef.current.getBoundingClientRect();
             setWidth(rect.width);
-            console.log(rect.width);
         }
     }, []);
 
@@ -104,7 +103,6 @@ function Bio() {
     
     const handleResize = () => {
         if (locationPath) {
-            console.log("its nooooooooot meeeeeee", location.pathname)
             if (window.innerWidth <= 1536) {
             
                 dispatch(resetComponents());

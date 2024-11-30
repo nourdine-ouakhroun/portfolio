@@ -27,7 +27,6 @@ const handleSubmit = (e) => {
 	)
 	.then(
 		(result) => {
-		console.log("Email sent successfully:", result.text);
 		setIsSubmitted(true);
 		setTimeout(() => setIsSubmitted(false), 2000);
 		setFormData({ from_name: "", email_id: "", message: "" });
