@@ -7,9 +7,9 @@ function Footer(){
                 <div className="flex justify-center items-center border-r-[1px] border-r-custom-gray w-[13rem]">
                     <span className="text-xl text-light-gray">find me in:</span>
                 </div>
-                <div className="flex justify-center items-center border-r-[1px] border-r-custom-gray w-[5rem]">
+                {/* <div className="flex justify-center items-center border-r-[1px] border-r-custom-gray w-[5rem]">
                     <img className="" src="/assets/twiter.svg" alt="" />
-                </div>
+                </div> */}
                 <a href={data.contact.socials[1].link} target="_blank" rel="noreferrer" className="border-r-[1px] border-r-custom-gray flex justify-between items-center gap-2">
                     <div className="flex justify-center items-center  w-[5rem]">
                         <img className="" src={data.contact.socials[1].icon} alt="" />
