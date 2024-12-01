@@ -8,21 +8,21 @@ const KeyBoard = ()=>{
 		<div className='flex justify-center items-center rounded-xl bg-[rgba(0,0,0,0.15)] w-full h-[12rem]'>
 			<div className='w-[85%] h-[85%] flex flex-col gap-4'>
 				<div className='flex flex-col'>
-					<span className='text-md 2xl:text-xl text-white'>// arrows to play</span>
-					<span className='text-md 2xl:text-xl text-white'>// use Keyboard</span>
+					<span className='text-sm 2xl:text-xl text-white'>// arrows to play</span>
+					<span className='text-sm 2xl:text-xl text-white'>// use Keyboard</span>
 				</div>
 				<div className='h-full w-full flex items-center flex-col justify-between'>
-					<div className='border-[2px] border-custom-gray lg:w-[50px] h-[30px] 2xl:w-[75px] 2xl:h-[40px] bg-black rounded-lg flex justify-center items-center'>
+					<div className='border-[2px] border-custom-gray lg:w-[45px] h-[30px] 2xl:w-[75px] 2xl:h-[40px] bg-black rounded-lg flex justify-center items-center'>
 						<img className="rotate-270" src="/assets/playIcon.svg" alt=""/>
 					</div>
 					<div className='flex gap-4'>
-						<div className='border-[2px] border-custom-gray lg:w-[50px] h-[30px] 2xl:w-[75px] 2xl:h-[40px] bg-black rounded-lg flex justify-center items-center'>
+						<div className='border-[2px] border-custom-gray lg:w-[45px] h-[30px] 2xl:w-[75px] 2xl:h-[40px] bg-black rounded-lg flex justify-center items-center'>
 							<img className="rotate-180" src="/assets/playIcon.svg" alt=""/>
 						</div>
-						<div className='border-[2px] border-custom-gray lg:w-[50px] h-[30px] 2xl:w-[75px] 2xl:h-[40px] bg-black rounded-lg flex justify-center items-center'>
+						<div className='border-[2px] border-custom-gray lg:w-[45px] h-[30px] 2xl:w-[75px] 2xl:h-[40px] bg-black rounded-lg flex justify-center items-center'>
 							<img className="rotate-90" src="/assets/playIcon.svg" alt=""/>
 						</div>
-						<div className='border-[2px] border-custom-gray lg:w-[50px] h-[30px] 2xl:w-[75px] 2xl:h-[40px] bg-black rounded-lg flex justify-center items-center'>
+						<div className='border-[2px] border-custom-gray lg:w-[45px] h-[30px] 2xl:w-[75px] 2xl:h-[40px] bg-black rounded-lg flex justify-center items-center'>
 							<img src="/assets/playIcon.svg" alt=""/>
 						</div>
 					</div>
@@ -60,9 +60,9 @@ const FoodContainer = () => {
 	const food = useSelector((state) => state.components.snakeFood);
 	return(
 		<div className='flex justify-center items-center w-full h-[12rem]'>
-			<div className='w-[85%] h-[85%] flex flex-col gap-4'>
+			<div className='w-[90%] h-[85%] flex flex-col gap-4'>
 				<div className='flex flex-col'>
-					<span className='text-md 2xl:text-xl text-white'>// food left</span>
+					<span className='text-sm 2xl:text-xl text-white'>// food left</span>
 				</div>
 				<div className='w-full flex flex-wrap gap-4'>
 				{
@@ -85,7 +85,7 @@ const Skip = () => {
 	}
 	return (
 		<div className='w-full h-[30%] flex justify-end items-end'>
-			<div className='flex justify-center items-center w-[75px] h-[50px] border-[1px] border-white rounded-xl'>
+			<div className='flex justify-center items-center w-[65px] h-[40px] 2xl:w-[75px] 2xl:h-[50px] border-[1px] border-white rounded-xl'>
 				<span onClick={handleSkip} className='text-white text-md 2xl:text-xl cursor-pointer'>skip</span>
 			</div>
 		</div>
@@ -324,7 +324,7 @@ const SnakeGame = () => {
 					<></>
 				)
 			}
-			<button onClick={gameOver || youWon ? resetGame : () => setIsMoving((prev) => !prev)} className={(!gameOver || youWon) && isMoving ? "hidden" : gameOver || youWon ? "text-sm 2xl:text-lg  px-4 text-light-gray rounded-lg transparent bg-transparent border-0" : "absolute text-sm 2xl:text-lg  px-4 bg-sunset-orange text-black rounded-lg"}>
+			<button onClick={gameOver || youWon ? resetGame : () => setIsMoving((prev) => !prev)} className={(!gameOver || youWon) && isMoving ? "hidden" : gameOver || youWon ? "text-sm 2xl:text-lg px-2 2xl:px-4 text-light-gray rounded-lg transparent bg-transparent border-0" : "absolute text-sm 2xl:text-lg px-2 2xl:px-4 bg-sunset-orange text-black rounded-lg"}>
 			{gameOver ? "start-agin" : "start-game"}
 			</button>
 		</div>
@@ -338,7 +338,7 @@ const GameContainer = () => {
 
     return (
 		<div className='hidden lg:flex h-full flex-1 items-center'>
-			<div className='bg-gradient-to-br from-dark-green  border-t-[1px] border-t-light-gray rounded-xl w-[32rem] h-[30rem] 2xl:w-[44rem] 2xl:h-[42rem] flex flex-col items-center justify-center shadow-black shadow-sm'>
+			<div className='bg-gradient-to-br from-dark-green  border-t-[1px] border-t-light-gray rounded-xl w-[30rem] h-[28rem] 2xl:w-[44rem] 2xl:h-[42rem] flex flex-col items-center justify-center shadow-black shadow-sm'>
 				<div className='flex w-[90%] h-[90%]'>
 					<div className='flex flex-1 w-full h-full bg-custom-blue rounded-xl'>
 						<SnakeGame/>
