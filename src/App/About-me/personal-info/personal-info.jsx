@@ -8,6 +8,13 @@ import Education from './education/education.jsx'
 import data from '/src/data.json'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
+const pageVariants = {
+	initial: { opacity: 0, y: -50 },
+	animate: { opacity: 1, y: 0 },
+	exit: { opacity: 0, y: 50 },
+};
+
 function Content({text, component, img}){
     return(
         <div className='w-full h-full flex flex-col flex-1 border-r-[1px] border-r-custom-gray'>
@@ -21,9 +28,17 @@ function Content({text, component, img}){
                 </div>
             </div>
             <div className='flex flex-1'>
-                <div className='w-full h-full flex justify-center items-start'>
+                <motion.div
+                    key={text}
+                    initial="initial"
+                    animate="animate"
+                    exit="exit"
+                    variants={pageVariants}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="w-full h-full flex justify-center items-start"
+                >
                     {component}
-                </div>
+                </motion.div>
                 <div className='hidden 2xl:flex justify-center  w-[3rem] h-full border-l-[1px] border-l-custom-gray'>
                     <div className='mt-2 w-[2rem] h-[13px] bg-light-gray'></div>
                 </div>

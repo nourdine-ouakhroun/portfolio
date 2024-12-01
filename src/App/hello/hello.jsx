@@ -3,6 +3,7 @@ import './hello.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { eatFood, resetFood } from '../../componentsSlice';
 import { useLocation, useNavigate } from 'react-router-dom';
+
 const KeyBoard = ()=>{
 	return(
 		<div className='flex justify-center items-center rounded-xl bg-[rgba(0,0,0,0.15)] w-full h-[12rem]'>
@@ -391,38 +392,54 @@ const TypingEffect = ({ text }) => {
 	);
   };
 
+  import { motion } from 'framer-motion';
 
+const pageVariants = {
+	initial: { opacity: 0, y: -50 },
+	animate: { opacity: 1, y: 0 },
+	exit: { opacity: 0, y: 50 },
+};
+
+  
 function Hello() {
 	return (
-		<div className='w-[90%] h-full flex justify-center items-center 2xl:gap-20 3xl:gap-28 relative'>
-			<div className='flex flex-1 justify-center 2xl:justify-end items-center 2xl:items-end'>
-				<div className='flex flex-col gap-20'>
-					<div className="flex flex-col gap-3">
-						<p className='text-xl md:text-lg 2xl:text-2xl 3xl:text-3xl'>Hello, World! I am</p>
-						<p className='text-6xl 2xl:text-6xl 3xl:text-7xl md:text-5xl' >Nourdine Ouakhroun</p>
-						<p className="text-xl 2xl:text-4xl 3xl:text-5xl md:text-3xl text-light-green 2xl:text-purple">
-						{'>'} <TypingEffect text="Full Stack Developer" />
+		<motion.div
+			initial="initial"
+			animate="animate"
+			exit="exit"
+			variants={pageVariants}
+			transition={{ duration: 0.5, ease: "easeInOut" }}
+			className="w-[90%] h-full flex justify-center items-center 2xl:gap-20 3xl:gap-28 relative"
+		>
+				<div className='flex flex-1 justify-center 2xl:justify-end items-center 2xl:items-end'>
+					<div className='flex flex-col gap-20'>
+						<div className="flex flex-col gap-3">
+							<p className='text-xl md:text-lg 2xl:text-2xl 3xl:text-3xl'>Hello, World! I am</p>
+							<p className='text-6xl 2xl:text-6xl 3xl:text-7xl md:text-5xl' >Nourdine Ouakhroun</p>
+							<p className="text-xl 2xl:text-4xl 3xl:text-5xl md:text-3xl text-light-green 2xl:text-purple">
+							{'>'} <TypingEffect text="Full Stack Developer" />
+							</p>
+						</div>
+						<p className='gap-3 flex flex-col'>
+							<span className='md:text-lg 2xl:text-2xl text-light-gray'>
+								// find my profile on GitHub:
+							</span>
+							<span>
+								<span className='md:text-lg 2xl:text-2xl text-purple'>const </span>
+								<span className='md:text-lg 2xl:text-2xl text-light-green'>github</span>
+								<span className='md:text-lg 2xl:text-2xl'> = </span>
+								<a className='md:text-lg 2xl:text-2xl text-dark-orange' href="https://github.com/nourdine-ouakhroun" target="_blank" rel="noreferrer">
+									<span>
+										"https://github.com/nourdine-ouakhroun" 
+									</span>
+								</a>
+							</span>
 						</p>
 					</div>
-					<p className='gap-3 flex flex-col'>
-						<span className='md:text-lg 2xl:text-2xl text-light-gray'>
-							// find my profile on GitHub:
-						</span>
-						<span>
-							<span className='md:text-lg 2xl:text-2xl text-purple'>const </span>
-							<span className='md:text-lg 2xl:text-2xl text-light-green'>github</span>
-							<span className='md:text-lg 2xl:text-2xl'> = </span>
-							<a className='md:text-lg 2xl:text-2xl text-dark-orange' href="https://github.com/nourdine-ouakhroun" target="_blank" rel="noreferrer">
-								<span>
-									"https://github.com/nourdine-ouakhroun" 
-								</span>
-							</a>
-						</span>
-					</p>
 				</div>
-			</div>
-			<GameContainer />
-		</div>
+				<GameContainer />
+		</motion.div>
+
 	);
 }
 

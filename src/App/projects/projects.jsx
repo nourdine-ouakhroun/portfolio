@@ -102,6 +102,13 @@ function ProjectsFliter()
     )
 }
 
+import { motion } from "framer-motion";
+
+const pageVariants = {
+	initial: { opacity: 0, y: -50 },
+	animate: { opacity: 1, y: 0 },
+	exit: { opacity: 0, y: 50 },
+};
 
 function ProjectsCard({link, description, img, text, technologies, skills})
 {
@@ -124,7 +131,14 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 		return () => window.removeEventListener('resize', () => {handleResize();});
 	}, []);
 	return (
-		<div className="w-full flex flex-col md:flex-row justify-end items-end border border-custom-gray">
+		<motion.div
+		initial="initial"
+		animate="animate"
+		exit="exit"
+		variants={pageVariants}
+		transition={{ duration: 0.5, ease: "easeInOut" }}
+		className="w-full flex flex-col md:flex-row justify-end items-end border border-custom-gray"
+	>
 			<div className="min-w-[15rem] flex w-full flex-col h-full justify-center items-center flex-1 border-r-[1px] border-r-custom-gray overflow-hidden">
 				<div className="md:hidden flex w-full justify-between items-center p-2 ">
 					<div className="flex gap-2 w-full justify-end items-center">
@@ -201,7 +215,7 @@ function ProjectsCard({link, description, img, text, technologies, skills})
 					</div>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	)
 }	
 

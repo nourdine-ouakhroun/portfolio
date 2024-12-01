@@ -102,6 +102,13 @@ return (
 };
 
 
+import { motion } from "framer-motion";
+
+const pageVariants = {
+	initial: { opacity: 0, y: -50 },
+	animate: { opacity: 1, y: 0 },
+	exit: { opacity: 0, y: 50 },
+};
 
 function Content(){
 	return(
@@ -116,9 +123,16 @@ function Content(){
 					</div>
 				</div>
 				{
-					<div className='flex justify-center items-center w-full h-full'>
+					<motion.div
+						initial="initial"
+						animate="animate"
+						exit="exit"
+						variants={pageVariants}
+						transition={{ duration: 0.5, ease: "easeInOut" }}
+						className="flex justify-center items-center w-full h-full"
+					>
 						<ContactForm/>
-					</div>
+					</motion.div>
 				}
 		</div>
 	)
