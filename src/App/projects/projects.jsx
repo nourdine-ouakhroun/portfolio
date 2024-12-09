@@ -254,7 +254,7 @@ function Projects()
 {
     return (
         <div className="w-full h-full about-me flex md:grid grid-cols-[1fr_4fr] justify-start items-start flex-col overflow-y-auto relative">
-            <div className='flex w-full  absolute md:relative bg-custom-blue'>
+            <div className='flex w-full absolute md:relative bg-custom-blue  z-10'>
                 <div className='w-full'>
                     <Category name="Filter" component={<ProjectsFliter/>}/>
                 </div>
