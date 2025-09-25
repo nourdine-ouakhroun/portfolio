@@ -100,9 +100,9 @@ function IntegratedBio({Lines, length}){
                 </div>
 
                 {/* Main content area - mobile profile card style */}
-                <div className='flex flex-col lg:flex-row'>
+                <div className='flex flex-col lg:flex-row max-h-[500px] lg:max-h-[600px] xl:max-h-[700px] overflow-y-auto terminal-scroll'>
                     {/* Mobile: Profile card style */}
-                    <div className='lg:hidden p-4 space-y-4'>
+                    <div className='lg:hidden p-4 space-y-4 max-h-[400px] overflow-y-auto terminal-scroll'>
                         {/* Profile header */}
                         <div className='flex items-center gap-4 bg-gradient-to-r from-dark-blue/30 to-custom-gray/20 rounded-xl p-4 border border-custom-gray/30'>
                             <div className='relative'>
@@ -169,7 +169,7 @@ function IntegratedBio({Lines, length}){
                     </div>
 
                     {/* Desktop/Tablet: Original layout */}
-                    <div className='hidden lg:flex lg:flex-row w-full'>
+                    <div className='hidden lg:flex lg:flex-row w-full max-h-[500px] lg:max-h-[600px] xl:max-h-[700px] overflow-y-auto terminal-scroll'>
                         {/* Code section */}
                         <div className='flex-1 flex'>
                             {/* Line numbers */}
