@@ -64,6 +64,27 @@ function Writer({Lines, length}){
 }
 
 function IntegratedBio({Lines, length}){
+    // Calculate age based on birth date: February 18, 2003
+    const calculateAge = (birthDate) => {
+        const today = new Date();
+        const birth = new Date(birthDate);
+        let age = today.getFullYear() - birth.getFullYear();
+        const monthDiff = today.getMonth() - birth.getMonth();
+        
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        
+        return age;
+    };
+    
+    const age = calculateAge('2003-02-18');
+    
+    // Update bio lines to use dynamic age
+    const updatedBioLines = Lines.map(line => 
+        line.includes('21-year-old') ? line.replace('21-year-old', `${age}-year-old`) : line
+    );
+    
     return(
         <div className='w-full h-auto md:h-[90%] flex justify-start items-start pt-2 md:pt-4'>
             <div className='w-full max-w-[98%] h-auto md:h-full bg-gradient-to-br from-dark-blue/40 to-custom-gray/20 rounded-xl border border-custom-gray/50 backdrop-blur-sm overflow-hidden'>
@@ -109,8 +130,8 @@ function IntegratedBio({Lines, length}){
                                 <div className="w-2 h-2 bg-green-500/80 rounded-full"></div>
                                 <span className="ml-2 text-light-gray text-xs font-mono">about-me.md</span>
                             </div>
-                            <div className='p-3 max-h-[300px] overflow-y-auto terminal-scroll'>
-                                {Lines.map((line, index) => {
+                                    <div className='p-3 max-h-[300px] overflow-y-auto terminal-scroll'>
+                                        {updatedBioLines.map((line, index) => {
                                     const isEmpty = line.trim() === '';
                                     const isTitle = line.includes('Nourdine');
                                     const hasKeywords = line.includes('software') || line.includes('developer') || line.includes('1337') || line.includes('42');
@@ -132,10 +153,10 @@ function IntegratedBio({Lines, length}){
 
                         {/* Quick stats */}
                         <div className='grid grid-cols-3 gap-2'>
-                            <div className='bg-gradient-to-br from-light-green/10 to-light-green/5 rounded-lg p-3 text-center border border-light-green/20'>
-                                <div className='text-light-green font-bold text-lg'>21</div>
-                                <div className='text-light-gray text-xs'>Years Old</div>
-                            </div>
+                                    <div className='bg-gradient-to-br from-light-green/10 to-light-green/5 rounded-lg p-3 text-center border border-light-green/20'>
+                                        <div className='text-light-green font-bold text-lg'>{age}</div>
+                                        <div className='text-light-gray text-xs'>Years Old</div>
+                                    </div>
                             <div className='bg-gradient-to-br from-purple/10 to-purple/5 rounded-lg p-3 text-center border border-purple/20'>
                                 <div className='text-purple font-bold text-lg'>1337</div>
                                 <div className='text-light-gray text-xs'>School</div>
@@ -163,7 +184,7 @@ function IntegratedBio({Lines, length}){
                             {/* Code content */}
                             <div className='flex-1 flex flex-col py-4 px-4 overflow-y-auto terminal-scroll'>
                                 <div className="text-light-green/70 text-sm font-mono mb-1 min-h-[24px] flex items-center">/**</div>
-                                {Lines.map((line, index) => {
+                                {updatedBioLines.map((line, index) => {
                                     const isEmpty = line.trim() === '';
                                     const isTitle = line.includes('Nourdine');
                                     const hasKeywords = line.includes('software') || line.includes('developer') || line.includes('1337') || line.includes('42');
