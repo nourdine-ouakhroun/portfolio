@@ -4,8 +4,9 @@
     "job": "Software Engineer",
     "resume" : "https://drive.google.com/file/d/1dPdKvm8iZa0cUbHagqo5pOPE__64hZ1o/view?usp=drive_link",
     "contact": {
-        "email": "nourdineoukhroun@gmail.com",
+        "email": "nourdineoukhroun@",
         "phone": "+212 770311302",
+        "phone2": "+212 620704142",
         "socials": 
             [
                 {
@@ -23,9 +24,16 @@
     
     "bio": [
         " ",
-        "I'm Nourdine Ouakhroun, a passionate software engineering student from Morocco, currently honing my skills at 1337 Coding School, part of the prestigious 42 Network.",
+        "I'm Nourdine Ouakhroun, passionate",
+        "software engineering student from",
+        "Morocco, studying at 1337 Coding",
+        "School (42 Network).",
         " ",
-        "I'm a 21-year-old full-stack software engineer with a deep interest in building efficient, scalable, and innovative solutions. My journey in software development has equipped me with a strong foundation in both front-end and back-end techsnologies, allowing me to create impactful applications.",
+        "21-year-old full-stack developer",
+        "with deep interest in building",
+        "efficient and scalable solutions.",
+        "Strong foundation in front-end",
+        "and back-end technologies.",
         " "
     ],
     "projects": [
@@ -154,6 +162,44 @@
             "focus": "Management",
             "achievement": "Graduated with a focus on leadership and teamwork",
             "skills": ["Project Management", "Communication", "Business Strategy"]
+        }
+    ],
+    "experience": [
+        {
+            "position": "Software Engineer Intern",
+            "company": "OCP Group",
+            "location": "Casablanca, Morocco",
+            "type": "Full-time",
+            "duration": "Mar 2025 – Sep 2025",
+            "period": "6 months",
+            "project": "AI Content Generator – an agentic AI platform for LinkedIn content optimization and engagement prediction",
+            "responsibilities": [
+                "Built a 3-stage AI content pipeline (retrieval, enhancement, validation) using LLaMA 3, Qwen, FAISS, and ChromaDB",
+                "Optimized AI models and inference with LoRA, PEFT, and quantization for better speed and efficiency",
+                "Performed A/B testing and engagement prediction to improve LinkedIn post performance and reach",
+                "Developed backend features with Flask and frontend interfaces with React, ensuring smooth user experience",
+                "Assisted with LLM fine-tuning experiments to explore content optimization possibilities"
+            ],
+            "techs": ["LLaMA 3", "Qwen", "FAISS", "ChromaDB", "LoRA", "PEFT", "Flask", "React", "Python", "AI/ML"],
+            "skills": ["AI/ML Development", "Full-Stack Development", "Model Optimization", "A/B Testing"]
+        },
+        {
+            "position": "Software Engineer Intern (Remote)",
+            "company": "FRAGS",
+            "location": "Delaware, US",
+            "type": "Part-time Remote",
+            "duration": "Nov 2024 – Apr 2025",
+            "period": "6 months",
+            "project": "Full-stack development",
+            "responsibilities": [
+                "Developed responsive frontend interfaces using React, JavaScript, TypeScript, HTML, and CSS",
+                "Built backend services with Node.js and Supabase, handling user management and secure data workflows",
+                "Integrated authentication/login/signup flows using Clerk.dev",
+                "Implemented payment processing with Stripe",
+                "Gained experience in full-stack development, authentication workflows, payment integration, and deployment best practices"
+            ],
+            "techs": ["React", "JavaScript", "TypeScript", "Node.js", "Supabase", "Clerk.dev", "Stripe", "HTML", "CSS"],
+            "skills": ["Full-Stack Development", "Authentication Systems", "Payment Integration", "Deployment"]
         }
     ],
     "image": {

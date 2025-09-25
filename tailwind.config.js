@@ -1,8 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './src/**/*.{html,jsx}',
-  ],
+  content: ['./src/**/*.{html,jsx}'],
   theme: {
     extend: {
       colors: {
@@ -18,14 +16,23 @@ export default {
         'light-purple': '#5565E8',
         'dark-blue': '#011221',
       },
-      rotate: {
-        '270': '270deg',
-      },
       screens: {
-        '3xl': '2000px',
+        'xs': '475px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+        '3xl': '1728px',
+        '4xl': '1920px',
+        '5xl': '2560px',
+        '6xl': '3440px',
       },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+      }
     },
   },
   plugins: [],
 }
-

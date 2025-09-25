@@ -38,6 +38,26 @@ body {
   	background-color: #010C15;
 	z-index: 1;
 }
+/* Hide main scrollbars globally */
+html::-webkit-scrollbar {
+	display: none;
+}
+
+html {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+/* Hidden scrollbar utility class */
 .scrollbar-hidden::-webkit-scrollbar {
 	display: none; /* For Chrome, Safari, and Opera */
 }
@@ -45,6 +65,31 @@ body {
 .scrollbar-hidden {
 	-ms-overflow-style: none; /* For Internet Explorer and Edge */
 	scrollbar-width: none; /* For Firefox */
+}
+
+/* Custom terminal scrollbar styling */
+.terminal-scroll::-webkit-scrollbar {
+	width: 6px;
+}
+
+.terminal-scroll::-webkit-scrollbar-track {
+	background: rgba(16, 23, 42, 0.3);
+	border-radius: 3px;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+	background: rgba(67, 217, 173, 0.3);
+	border-radius: 3px;
+	transition: background 0.2s;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb:hover {
+	background: rgba(67, 217, 173, 0.5);
+}
+
+.terminal-scroll {
+	scrollbar-width: thin;
+	scrollbar-color: rgba(67, 217, 173, 0.3) rgba(16, 23, 42, 0.3);
 }
 h1 {
   	font-size: 3.2em;
