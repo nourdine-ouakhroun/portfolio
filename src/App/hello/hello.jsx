@@ -259,14 +259,39 @@ const SnakeGame = () => {
 	const handleKeyDown = (event) => {
 		if (gameOver) return;
 
+		// Prevent direction changes that would cause immediate collision
 		if (event.key === "ArrowUp" && direction !== "DOWN") {
-			setDirection("UP");
+			// Check if moving up would hit the snake's body
+			const head = { ...snake[0] };
+			head.y -= gridSize;
+			const wouldCollide = snake.slice(1).some((segment) => segment.x === head.x && segment.y === head.y);
+			if (!wouldCollide) {
+				setDirection("UP");
+			}
 		} else if (event.key === "ArrowDown" && direction !== "UP") {
-			setDirection("DOWN");
+			// Check if moving down would hit the snake's body
+			const head = { ...snake[0] };
+			head.y += gridSize;
+			const wouldCollide = snake.slice(1).some((segment) => segment.x === head.x && segment.y === head.y);
+			if (!wouldCollide) {
+				setDirection("DOWN");
+			}
 		} else if (event.key === "ArrowLeft" && direction !== "RIGHT") {
-			setDirection("LEFT");
+			// Check if moving left would hit the snake's body
+			const head = { ...snake[0] };
+			head.x -= gridSize;
+			const wouldCollide = snake.slice(1).some((segment) => segment.x === head.x && segment.y === head.y);
+			if (!wouldCollide) {
+				setDirection("LEFT");
+			}
 		} else if (event.key === "ArrowRight" && direction !== "LEFT") {
-			setDirection("RIGHT");
+			// Check if moving right would hit the snake's body
+			const head = { ...snake[0] };
+			head.x += gridSize;
+			const wouldCollide = snake.slice(1).some((segment) => segment.x === head.x && segment.y === head.y);
+			if (!wouldCollide) {
+				setDirection("RIGHT");
+			}
 		}
 	};
 
@@ -451,6 +476,36 @@ const pageVariants = {
 
   
 function Hello() {
+	const navigate = useNavigate();
+	
+	// Swipe functionality for mobile navigation
+	const [touchStart, setTouchStart] = useState(null);
+	const [touchEnd, setTouchEnd] = useState(null);
+	
+	// Minimum swipe distance (in px) to trigger navigation
+	const minSwipeDistance = 50;
+	
+	const onTouchStart = (e) => {
+		setTouchEnd(null);
+		setTouchStart(e.targetTouches[0].clientX);
+	};
+	
+	const onTouchMove = (e) => {
+		setTouchEnd(e.targetTouches[0].clientX);
+	};
+	
+	const onTouchEnd = () => {
+		if (!touchStart || !touchEnd) return;
+		
+		const distance = touchStart - touchEnd;
+		const isLeftSwipe = distance > minSwipeDistance;
+		
+		if (isLeftSwipe) {
+			// Swipe left: go to About Me page
+			navigate('/about-me');
+		}
+	};
+
 	return (
 		<motion.div
 			initial="initial"
@@ -459,6 +514,9 @@ function Hello() {
 			variants={pageVariants}
 			transition={{ duration: 0.5, ease: "easeInOut" }}
 			className="w-[95%] md:w-[90%] h-full flex flex-col xl:flex-row justify-center items-center xl:items-stretch xl:gap-10 2xl:gap-14 3xl:gap-20 relative px-4 md:px-0"
+			onTouchStart={onTouchStart}
+			onTouchMove={onTouchMove}
+			onTouchEnd={onTouchEnd}
 		>
 				<div className='flex xl:basis-[58%] xl:max-w-[58%] flex-1 justify-center xl:justify-start items-center xl:items-center'>
 					<div className='flex flex-col gap-5 md:gap-8 lg:gap-12 xl:gap-14 2xl:gap-16 max-w-[48rem] xl:max-w-[44rem] 2xl:max-w-[52rem]'>

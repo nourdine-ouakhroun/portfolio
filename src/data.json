@@ -2,7 +2,7 @@
 {
     "name": "nourdine ouakhroun",
     "job": "Software Engineer",
-    "resume" : "https://drive.google.com/file/d/1dPdKvm8iZa0cUbHagqo5pOPE__64hZ1o/view?usp=drive_link",
+    "resume" : "https://drive.google.com/file/d/19It8GIGfVrRvjPexP30xyrhoimThhVd0/view?usp=sharing",
     "contact": {
         "email": "nourdineoukhroun@",
         "phone": "+212 770311302",
@@ -203,8 +203,8 @@
         }
     ],
     "image": {
-        "name": "nouakhro.jpeg",
-        "src": "/assets/nouakhro-none_background.jpeg"
+        "name": "nouakhro.png",
+        "src": "/assets/6378174d-ba94-4f6c-8a70-13471268a1e2_removalai_preview.png"
     }
 }
 

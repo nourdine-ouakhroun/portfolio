@@ -245,14 +245,14 @@ function Bio() {
     useEffect(() => {
         if (locationPath) {
             dispatch(resetComponents());
-            handleClick({
-                img: '/assets/readmi.svg',
-                text: 'about-me.md',
+                handleClick({
+                    img: '/assets/readmi.svg',
+                    text: 'about-me.md',
                 component: <IntegratedBio Lines={data.bio} length={data.bio.length + 2}/>
-            });
-        }
-        else {
-            dispatch(resetComponents());
+                });
+            }
+            else {
+                dispatch(resetComponents());
         }
     }, [data.bio, locationPath]);           
     return (
