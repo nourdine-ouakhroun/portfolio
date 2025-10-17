@@ -58,7 +58,6 @@ function Contacts() {
       'gap-0 sm:gap-0 md:gap-0'
     )}>
       <Component img="/assets/mail-icon.svg" text={data.contact.email} type="email"/>
-      <Component img="/assets/phone-icon.svg" text={data.contact.phone} type="phone"/>
       <Component img="/assets/phone-icon.svg" text={data.contact.phone2} type="phone"/>
     </div>
   );
